@@ -1,4 +1,4 @@
-const inputnombreHijo = document.getElementById("txtnombreHijo");
+const inputnombrecompletoHijo = document.getElementById("txtnombrecompletoHijo");
 const inputnivelEducativo = document.getElementById("txtnivelEducativo");
 const inputannoLectivo = document.getElementById("txtannoLectivo");
 const btnGuardar = document.querySelector("#btnGuardar");
@@ -23,7 +23,7 @@ function validar() {
 
 function registrarHijo(){
     const datosHijos = {
-        nombreHijo: inputnombreHijo.value,
+        nombrecompletoHijo: inputnombrecompletoHijo.value,
         nivelEducativo: inputnivelEducativo.value,
         annoLectivo: inputannoLectivo.value,
     };
