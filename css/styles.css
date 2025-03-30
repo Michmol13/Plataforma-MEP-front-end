@@ -18,7 +18,7 @@ body{
     padding: 30px 0;
     background-color: #070e33;
     display: flex;
-    justify-content:space-around; /* Distribuye los elementos equitativamente */
+    justify-content:space-around; 
     align-items: center;
     text-align: center;
 }
@@ -83,8 +83,8 @@ body{
 }
 
 .txtprincipal-overlay {
-    position: relative; /* Para que el texto quede por encima del ::before */
-    color: white; /* Asegura que el texto sea legible */
+    position: relative; 
+    color: white; 
     text-align: center;
     padding: 30px;
     width: 100%;
@@ -155,4 +155,120 @@ body{
     color: white;
     text-align: center;
     font-size: 30px;
+}
+
+/* Medidas para móviles */
+@media (max-width: 480px) {
+    .title {
+        height: 170px;
+        padding: 5px;
+    }
+    
+    .txtprincipal {
+        width: 100%;
+        height: 100%;
+        margin-top: 60px;
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-image: url(../img/Bienvenida.png); 
+    }
+    
+    .txtprincipal-overlay h1 {
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        font-style: oblique;
+        color: black;
+    }
+
+    .txtprincipal-overlay p {
+        text-align: center;
+        padding-top: 5px;
+    }
+}
+
+/* Medidas para Tablets */
+@media (min-width: 481px) and (max-width: 1023px) {
+    .title {
+        height: 170px;
+        padding: 5px;
+    }
+    
+    .txtprincipal {
+        width: 95%;
+        height: 100%;
+        margin-top: 60px;
+        padding-top: 120px;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../img/Bienvenida.png); 
+    }
+    
+    .txtprincipal-overlay h1 {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        font-style: oblique;
+        color: black;
+    }
+
+    .search-container {
+        margin-bottom: 20px;
+    }
+
+    .txtprincipal-overlay p {
+        text-align: center;
+        padding-top: 5px;
+    }
+}
+
+/* Medidas para Laptops */
+@media (min-width: 1024px) and (max-width: 1902px) {
+    .title {
+        width: 100%;
+        height: auto; 
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .txtprincipal {
+        border-radius: 10px;
+        width: 80%;
+        height: 400px; 
+        margin-top: 15px;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: black;
+        background-image: url(../img/Bienvenida.png);
+    }
+
+    .txtprincipal-overlay h1 {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        font-style: oblique;
+    }
+
+    .search-container {
+        border: #222222 1px solid;
+        border-radius: 10px;
+        margin: 5px;
+        padding: 20px;
+    }
 }

@@ -1,0 +1,23 @@
+
+
+.container-fluid {
+    flex-shrink: 0; /* Evita que el header se reduzca */
+}
+
+.container {
+    flex-grow: 1; /* Hace que el contenido ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el formulario */
+    align-items: center;
+}
+
+.footer {
+    background-color: #070e33; /* Color de fondo del footer */
+    color: white; /* Color del texto del footer */
+    text-align: center; /* Centra el texto en el footer */
+    padding: 20px; /* Espaciado interno del footer */
+    position: relative; /* Posición relativa para el footer */
+    bottom: 0; /* Alinea el footer al fondo de la página */
+    width: 100%; /* Ancho completo del footer */
+}
