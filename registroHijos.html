@@ -1,37 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Hijos</title>
+    <title>Registro de Hijos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <form>
-        <div>
-            <label for="txtnombrecompletoHijo">Nombre de su Hijo:</label>
-            <input type="mail" id="txtnombrecompletoHijo" required> 
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-1registro">Registro Escolar</div>
+        <ul class="navbar-nav">
+            <li><a class="nav-link" href="index.html">Inicio</a></li>
+            <li><a class="nav-link" href="registroUsuarios.html">Registro de Usuarios</a></li>
+            <li><a class="nav-link" href="registroNiveles.html">Registro de Niveles Educativos</a></li>
+            <li><a class="nav-link" href="registroHijos.html">Registro de Hijos</a></li>
+        </ul>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Registro de Hijos</h2>
+        <div class="form-container">
+            <form>
+                <div class="mb-3">
+                    <label for="txtnombreHijo" class="form-label">Nombre de su Hijo:</label>
+                    <input type="text" class="form-control" id="txtnombreHijo" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txtnivelEducativo" class="form-label">Nivel Educativo:</label>
+                    <input type="text" class="form-control" id="txtnivelEducativo" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txtannoLectivo" class="form-label">Año Lectivo:</label>
+                    <input type="text" class="form-control" id="txtannoLectivo" required>
+                </div>
+
+                <div>
+                    <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                </div>
+            </form>
         </div>
+    </div>
 
-        <div>
-            <label for="txtnivelEducativo">Nivel Educativo:</label>
-            <input type="text" id="txtnivelEducativo" required>
+    <!-- FOOTER -->
+    <footer class="footer bg-dark text-light pt-4">
+        <div class="container text-center">
+            <p>MINISTERIO DE EDUCACIÓN PÚBLICA - GOBIERNO DE COSTA RICA</p>
         </div>
+    </footer>
 
-        <div>
-            <label for="txtannoLectivo">Año Lectivo:</label>
-            <input type="text" id="txtannoLectivo" required>
-        </div>
-
-        <div>
-            <button type="button" id="btnGuardar">Guardar</button>
-        </div>
-
-    </form>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/registroHijos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
