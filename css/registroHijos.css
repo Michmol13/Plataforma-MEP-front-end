@@ -1,23 +1,23 @@
-
-
-.container-fluid {
-    flex-shrink: 0; /* Evita que el header se reduzca */
-}
-
 .container {
-    flex-grow: 1; /* Hace que el contenido ocupe el espacio disponible */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra verticalmente el formulario */
-    align-items: center;
+    max-width: 600px;
 }
 
-.footer {
-    background-color: #070e33; /* Color de fondo del footer */
-    color: white; /* Color del texto del footer */
-    text-align: center; /* Centra el texto en el footer */
-    padding: 20px; /* Espaciado interno del footer */
-    position: relative; /* Posición relativa para el footer */
-    bottom: 0; /* Alinea el footer al fondo de la página */
-    width: 100%; /* Ancho completo del footer */
+.card {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.123);
 }
+
+#btnGuardar {
+    background: linear-gradient(90deg, #002B7F 33%, #FFFFFF 33%, #FFFFFF 66%, #CE1126 66%);
+    color: rgb(0, 0, 0);
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btnGuardar:hover {
+    background: linear-gradient(90deg, #002080 33%, #F0F0F0 33%, #F0F0F0 66%, #B5001A 66%);
+}
+

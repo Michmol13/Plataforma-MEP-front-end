@@ -27,7 +27,7 @@ function registrarHijo(){
         nivelEducativo: inputnivelEducativo.value,
         annoLectivo: inputannoLectivo.value,
     };
-    fetch("http://localhost:3000/registrohijos", {
+    fetch("http://localhost:3000/registroHijos", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
