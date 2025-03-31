@@ -4,6 +4,20 @@ body {
     min-height: 100vh;
 }
 
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-btn {
+    padding: 10px;
+}
+
+.nav-btn a p {
+    margin: 0;
+}
+
 .title {
     font-size: 55px;
     font-weight: bold;
@@ -150,13 +164,71 @@ body {
 
 /*MÓVILES (max-width: 480px)*/
 @media (max-width: 480px) {
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-collapse.show {
+        display: flex;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 25px;
+    }
+    
+    .navbar-toggler-icon {
+        background: none; 
+        border: none; 
+        width: 30px; 
+        height: 25px;
+        position: relative;
+    }
+    
+    .navbar-toggler-icon:before, 
+    .navbar-toggler-icon:after, 
+    .navbar-toggler-icon span {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 4px; 
+        background-color: white; 
+        transition: all 0.3s ease;
+    }
+    
+
+    .navbar-toggler-icon:before {
+        top: 0; 
+    }
+    
+    
+    .navbar-toggler-icon span {
+        top: 50%; 
+        transform: translateY(-50%); 
+    }
+    
+
+    .navbar-toggler-icon:after {
+        bottom: 0; 
+    }
+
     .title {
-        font-size: 35px;
-        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 30px;
+        font-size: 45px;
     }
 
     .txtprincipal {
-        height: 300px;
+        height: 450px;
     }
 
     .txtprincipal-overlay h1 {
@@ -168,14 +240,18 @@ body {
         font-size: 18px;
     }
 
+    .search-container{
+        height: 50px;
+    }
+
     .search-container input {
-        width: 80%;
-        height: 40px;
+        height: 50px;
         font-size: 16px;
     }
 
     .search-container button {
         font-size: 16px;
+        height: 50px;
     }
 
     .footer {
@@ -185,35 +261,108 @@ body {
 
 /*TABLETS (481px - 1023px)*/
 @media (min-width: 481px) and (max-width: 1023px) {
+    .container-fluid.navbar {
+        padding-top: 30px; 
+        padding-bottom: 30px;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-collapse.show {
+        display: flex;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+        font-size: 25px;
+        margin-left: 20px;
+    }
+
+    .navbar-toggler-icon {
+        background: none; 
+        border: none; 
+        width: 50px; 
+        height: 50px;
+        position: relative;
+    }
+
+    .navbar-toggler-icon:before, 
+    .navbar-toggler-icon:after, 
+    .navbar-toggler-icon span {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 4px; 
+        background-color: white; 
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon:before {
+        top: 0; 
+    }
+
+    .navbar-toggler-icon span {
+        top: 50%; 
+        transform: translateY(-50%); 
+    }
+
+    .navbar-toggler-icon:after {
+        bottom: 0; 
+    }
+
     .title {
-        font-size: 45px;
+        font-size: 65px;
+        text-align: center;
+        margin-bottom: 30px;
     }
 
     .txtprincipal {
-        height: 450px;
+        height: 650px;
+        margin-bottom: 100px;
     }
 
     .txtprincipal-overlay h1 {
         padding: 60px;
-        font-size: 35px;
+        font-size: 45px;
     }
 
     .txtprincipal-overlay p {
-        font-size: 25px;
+        font-size: 40px;
     }
 
     .search-container input {
         width: 50%;
-        height: 50px;
-        font-size: 20px;
+        height: 70px;
+        font-size: 30px;
     }
 
     .search-container button {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .footer {
-        font-size: 18px;
+        padding: 20px;
+    }
+
+    .footer-logo{
+        width: 500px;
+        height: 80px;
+    }
+
+    .icono{
+        width: 70px;
+        height: 70px;
     }
 }
 
