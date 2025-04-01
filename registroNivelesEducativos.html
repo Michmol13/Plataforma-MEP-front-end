@@ -53,14 +53,32 @@
             </div>
         </div>
     </nav>
-
-
-
-
-
-
-
-
+    <div class="container mt-5">
+        <h2 class="tit-princ text-center">Registro de Niveles Educativos</h2>
+        <div class="card p-4 shadow">
+            <form>
+                <div class="mb-3">
+                    <label for="txtnombreNivel" class="form-label">Nombre del Nivel Educativo:</label>
+                    <input type="text" class="form-control" id="txtnombreNivel" required>
+                </div>
+                <div class="mb-3">
+                    <label for="txtdescripcionNivel" class="form-label">Descripción del Nivel Educativo:</label>
+                    <textarea class="form-control" id="txtdescripcionNivel" rows="4" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="txtestadoNivel" class="form-label">Estado del Nivel Educativo:</label>
+                    <select class="form-select" id="txtestadoNivel" required>
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                </div>
+                <div class="btns text-center">
+                    <button type="button" id="btnGuardar">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
     <footer class="footer">
         <div class="container text-center">
             <img src="./img/logo-white.png" alt="Ministerio de Educación Pública - Gobierno de Costa Rica" class="footer-logo">
