@@ -1,7 +1,7 @@
-const inputnombrelista = document.getElementById("txtnombrelista");
+const inputnombreLista = document.getElementById("txtnombreLista");
 const inputnivelEducativo = document.getElementById("txtnivelEducativo");
 const inputfechaCreacion = document.getElementById("txtfechaCreacion");
-const inputestadolista = document.getElementById("txtestadolista");
+const inputestadoLista = document.getElementById("txtestadoLista");
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required]');
@@ -24,10 +24,10 @@ function validar() {
 
 function registrarLista(){
     const datosLista = {
-        nombrelista: inputnombrelista.value,
+        nombrelista: inputnombreLista.value,
         nivelEducativo: inputnivelEducativo.value,
         fechaCreacion: inputfechaCreacion.value,
-        estadolista: inputestadolista.value,
+        estadolista: inputestadoLista.value,
     };
     fetch("http://localhost:3000/registroListasUtiles", {
         method: 'POST',
