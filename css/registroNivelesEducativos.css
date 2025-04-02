@@ -5,7 +5,14 @@
 .card {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.123);
+    margin-bottom: 87px;
 }
+
+.tit-princ{
+    margin-top: 73px;
+    margin-bottom: 50px;
+}
+
 
 #btnGuardar {
     background: linear-gradient(90deg, #002B7F 33%, #FFFFFF 33%, #FFFFFF 66%, #CE1126 66%);

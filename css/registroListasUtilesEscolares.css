@@ -2,9 +2,16 @@
     max-width: 600px;
 }
 
+.tit-princ{
+    margin-top: 73px;
+    margin-bottom: 50px;
+}
+
+
 .card {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.123);
+    margin-bottom: 73px;
 }
 
 #btnGuardar {
@@ -26,11 +33,11 @@
     .tit-princ{
         font-size: 40px;
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .card{
-        height: 500px;
+        height: 640px;
     }
 
     .form-label{
@@ -45,5 +52,6 @@
         font-size: 25px;
         width: 150px;
         height: 80px;
+        margin-top: 20px;
     }
 }
