@@ -53,6 +53,54 @@
             </div>
         </div>
     </nav>
+    <div class="container mt-5">
+        <h2 class="tit-princ text-center">Registro de Usuarios</h2>
+        <div class="card p-4 shadow">
+            <form>
+                <div class="mb-3">
+                    <label for="txtnombreCompleto" class="form-label">Nombre completo:</label>
+                    <input type="text" class="form-control" id="txtnombreCompleto" required>
+                </div>
+                <div class="mb-3">
+                    <label for="txtcedula" class="form-label">Cedula:</label>
+                    <input type="text" class="form-control" id="txtcedula" required>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="txtcorreoElectronico" class="form-label">Correo Electronico:</label>
+                    <input type="text" class="form-control" id="txtcorreoElectronico" required>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="txtcontrasena" class="form-label">Contraseña:</label>
+                    <input type="text" class="form-control" id="txtcontrasena" required>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="txtconfirmarContrasenna" class="form-label">Confirmar Contraseña:</label>
+                    <input type="text" class="form-control" id="txtconfirmarContrasenna" required>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="txtrol" class="form-label">Rol:</label>
+                    <select class="form-select" id="txtestadoNivel" required>
+                        <option value="true">Maestro</option>
+                        <option value="false">Padre de familia</option>
+                    </select>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="txtestadoNivel" class="form-label">Estado del Nivel Educativo:</label>
+                    <select class="form-select" id="txtestadoNivel" required>
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                </div>
+                <div class="btns text-center">
+                    <button type="button" id="btnGuardar">Guardar</button>
+                </div>
+            </form>
+        </div>
 
 
 
