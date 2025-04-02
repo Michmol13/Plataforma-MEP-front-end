@@ -368,6 +368,10 @@ body {
 
 /*PANTALLAS GRANDES (1024px - 1902px)*/
 @media (min-width: 1024px) and (max-width: 1902px) {
+    .nav-btn{
+        margin-right:30px;
+    }
+
     .title {
         font-size: 50px;
     }
