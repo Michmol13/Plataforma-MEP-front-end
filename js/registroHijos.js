@@ -55,5 +55,4 @@ function registrarHijo(){
 }
 
 
-
 btnGuardar.addEventListener('click', validar);

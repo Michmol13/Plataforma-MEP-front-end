@@ -3,12 +3,33 @@ const inputcedula = document.getElementById("txtcedula");
 const inputcorreoElectronico = document.getElementById("txtcorreoElectronico");
 const inputcontrasena = document.getElementById("txtcontrasena");
 const inputconfirmarContrasena = document.getElementById("txtconfirmarContrasena");
-const inputrol= document.getElementById("txtrol");
+const inputrol = document.getElementById("txtrol");
 const inputestadoCuenta = document.getElementById("txtestadoCuenta");
 const btnGuardar = document.querySelector("#btnGuardar");
 
-const inputsRequeridos = document.querySelectorAll('input[required], textarea[required], select[required]');
+const inputsRequeridos = document.querySelectorAll('input[required]');
 
+document.addEventListener("DOMContentLoaded", function () {
+    function togglePasswordVisibility(inputId, buttonId) {
+        const input = document.getElementById(inputId);
+        const button = document.getElementById(buttonId);
+        const icon = button.querySelector("i"); 
+
+        button.addEventListener("click", function () {
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.replace("fa-eye", "fa-eye-slash"); // Cambia a ojo cerrado
+            } else {
+                input.type = "password";
+                icon.classList.replace("fa-eye-slash", "fa-eye"); // Cambia a ojo abierto
+            }
+        });
+        
+    }
+
+    togglePasswordVisibility("txtcontrasena", "togglePassword");
+    togglePasswordVisibility("txtconfirmarContrasena", "toggleConfirmPassword");
+});
 
 function validar() {
     let error = false;
@@ -22,11 +43,11 @@ function validar() {
     }
 
     if(error == false){
-        registrarUsuario();
+        registrarUsuarios();
     } 
 }
 
-function registrarUsuario() {
+function registrarUsuarios(){
     const datosUsuario = {
         nombreCompleto: inputnombreCompleto.value,
         cedula: inputcedula.value,
@@ -36,15 +57,13 @@ function registrarUsuario() {
         rol: inputrol.value,
         estadoCuenta: inputestadoCuenta.value,
     };
-
     fetch("http://localhost:3000/registroUsuarios", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(datosUsuario)
-    })
-    .then(response => {
+    }).then(response => {
         if (response.ok) {
             Swal.fire({
                 icon: "success",
@@ -55,7 +74,7 @@ function registrarUsuario() {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "No se pudo registrar el usuario"
+                text: "No se pudo registrar a el usuario"
             });
         }
     })
@@ -64,5 +83,4 @@ function registrarUsuario() {
     });
 }
 
-// Agregar evento al botón "Guardar"
 btnGuardar.addEventListener('click', validar);

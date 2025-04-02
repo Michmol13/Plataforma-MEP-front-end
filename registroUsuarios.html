@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro escolar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/registroUsuarios.css">
 </head>
@@ -55,7 +56,7 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="tit-princ text-center">Registro de Usuarios</h2>
+        <h2 class="tit-princ text-center">Registro de Usuario</h2>
         <div class="card p-4 shadow">
             <form>
                 <div class="mb-3">
@@ -64,34 +65,39 @@
                 </div>
                 <div class="mb-3">
                     <label for="txtcedula" class="form-label">Cedula:</label>
-                    <input type="text" class="form-control" id="txtcedula" required>
-                    
+                    <input type="text" class="form-control" id="txtcedula" rows="4" required>
                 </div>
                 <div class="mb-3">
-                    <label for="txtcorreoElectronico" class="form-label">Correo Electronico:</label>
+                    <label for="txtcorreoElectronico" class="form-label">Correo electronico:</label>
                     <input type="text" class="form-control" id="txtcorreoElectronico" required>
-                    
                 </div>
                 <div class="mb-3">
                     <label for="txtcontrasena" class="form-label">Contraseña:</label>
-                    <input type="text" class="form-control" id="txtcontrasena" required>
-                    
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="txtcontrasena" required>
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <label for="txtconfirmarContrasena" class="form-label">Confirmar Contraseña:</label>
-                    <input type="text" class="form-control" id="txtconfirmarContrasena" required>
-                    
-                </div>
+                    <label for="txtconfirmarContrasena" class="form-label">Confirmar contraseña:</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="txtconfirmarContrasena" required>
+                        <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                </div>             
                 <div class="mb-3">
                     <label for="txtrol" class="form-label">Rol:</label>
                     <select class="form-select" id="txtrol" required>
-                        <option value="true">Maestro</option>
-                        <option value="false">Padre de familia</option>
+                        <option value="1">Maestro</option>
+                        <option value="2">Padre de familia</option>
                     </select>
-                    
                 </div>
                 <div class="mb-3">
-                    <label for="txtestadoCuenta" class="form-label">Estado de la cuenta:</label>
+                    <label for="txtestadoCuenta" class="form-label">Estado de cuenta:</label>
                     <select class="form-select" id="txtestadoCuenta" required>
                         <option value="true">Activo</option>
                         <option value="false">Inactivo</option>
@@ -102,7 +108,7 @@
                 </div>
             </form>
         </div>
-
+    </div>
 
     <footer class="footer">
         <div class="container text-center">
