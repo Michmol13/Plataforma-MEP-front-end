@@ -37,7 +37,7 @@
     }
 
     .card{
-        height: 500px;
+        height: 540px;
     }
 
     .form-label{
@@ -52,5 +52,6 @@
         font-size: 25px;
         width: 150px;
         height: 80px;
+        margin-top: 30px;
     }
 }
