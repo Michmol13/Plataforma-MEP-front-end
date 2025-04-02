@@ -56,7 +56,7 @@ body {
 
 .txtprincipal {
     position: relative;
-    background-image: url('/img/mep_0.webp');
+    background-image: url('../img/mep_0.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
