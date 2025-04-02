@@ -59,20 +59,23 @@
         <div class="card p-4 shadow">
             <form>
                 <div class="mb-3">
-                    <label for="txtnombrelista" class="form-label">Nombre de la lista:</label>
-                    <input type="text" class="form-control" id="txtnombrelista" required>
+                    <label for="txtnombreLista" class="form-label">Nombre de la lista:</label>
+                    <input type="text" class="form-control" id="txtnombreLista" required>
                 </div>
                 <div class="mb-3">
                     <label for="txtnivelEducativo" class="form-label">Nivel Educativo:</label>
                     <input type="text" class="form-control" id="txtnivelEducativo" required>
                 </div>
                 <div class="mb-3">
-                    <label for="txtannoCreacion" class="form-label">Año Creación:</label>
-                    <input type="text" class="form-control" id="txtannoCreacion" required>
+                    <label for="txtfechaCreacion" class="form-label">Fecha de Creación:</label>
+                    <input type="text" class="form-control" id="txtfechaCreacion" required>
                 </div>
                 <div class="mb-3">
-                    <label for="txtestadolista" class="form-label">Estado Lista:</label>
-                    <input type="text" class="form-control" id="txtestadolista" required>
+                    <label for="txtestadoLista" class="form-label">Estado Lista:</label>
+                    <select class="form-select" id="txtestadoLista" required>
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
                 </div>
                 <div class="btns text-center">
                     <button type="button" id="btnGuardar">Guardar</button>

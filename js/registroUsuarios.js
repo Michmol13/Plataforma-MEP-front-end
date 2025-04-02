@@ -1,7 +1,7 @@
 const inputnombreCompleto = document.getElementById("txtnombreCompleto");
 const inputcedula = document.getElementById("txtcedula");
 const inputcorreoElectronico = document.getElementById("txtcorreoElectronico");
-const inputcontrasenal = document.getElementById("txtcontrasenna");
+const inputcontrasena = document.getElementById("txtcontrasena");
 const inputconfirmarContrasena = document.getElementById("txtconfirmarContrasena");
 const inputrol= document.getElementById("txtrol");
 const inputestadoCuenta = document.getElementById("txtestadoCuenta");
@@ -28,30 +28,34 @@ function validar() {
 
 function registrarUsuario() {
     const datosUsuario = {
-        nombreNivel: inputnombreNivel.value,
-        descripcion: inputdescripcionNivel.value,
-        estado: inputestadoNivel.value,
+        nombreCompleto: inputnombreCompleto.value,
+        cedula: inputcedula.value,
+        correoElectronico: inputcorreoElectronico.value,
+        contrasena: inputcontrasena.value,
+        confirmarContrasena: inputconfirmarContrasena.value,
+        rol: inputrol.value,
+        estadoCuenta: inputestadoCuenta.value,
     };
 
-    fetch("http://localhost:3000/registroNivelesEducativos", {
+    fetch("http://localhost:3000/registroUsuarios", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(datosNivel)
+        body: JSON.stringify(datosUsuario)
     })
     .then(response => {
         if (response.ok) {
             Swal.fire({
                 icon: "success",
-                title: "Nivel Educativo registrado",
-                text: "El nivel educativo ha sido registrado con éxito"
+                title: "Usuario registrado",
+                text: "El usuario ha sido registrado con éxito"
             });
         } else {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "No se pudo registrar el nivel educativo"
+                text: "No se pudo registrar el usuario"
             });
         }
     })

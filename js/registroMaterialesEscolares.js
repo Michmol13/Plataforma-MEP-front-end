@@ -3,7 +3,6 @@ const inputdescripcion = document.getElementById("txtdescripcion");
 const inputcategoria = document.getElementById("txtcategoria");
 const inputunidadMedida = document.getElementById("txtunidadMedida");
 const inputestado = document.getElementById("txtestado");
-const inputcantidad = document.getElementById("txtcantidad");
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required], textarea[required], select[required]');
@@ -26,13 +25,12 @@ function validar() {
 }
 
 function registrarMaterialesEscolares() {
-    const MaterialesEscolares = {
+    const datosMateriales = {
         nombreMaterial: inputnombreMaterial.value,
         descripcion: inputdescripcion.value,
         categoria: inputcategoria.value,
         unidadMedida: inputunidadMedida.value,
         estado: inputestado.value,
-        cantidad: inputcantidad.value,
     };
 
     fetch("http://localhost:3000/registroMaterialesEscolares", {

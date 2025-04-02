@@ -24,10 +24,10 @@ function validar() {
 
 function registrarLista(){
     const datosLista = {
-        nombrelista: inputnombreLista.value,
+        nombreLista: inputnombreLista.value,
         nivelEducativo: inputnivelEducativo.value,
         fechaCreacion: inputfechaCreacion.value,
-        estadolista: inputestadoLista.value,
+        estadoLista: inputestadoLista.value,
     };
     fetch("http://localhost:3000/registroListasUtiles", {
         method: 'POST',
