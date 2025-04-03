@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function validarCedula(cedula) {
-    const regexCedulaCR = /^\d{1}-\d{3,4}-\d{3,5}$/;
-    return regexCedulaCR.test(cedula);
+    const regeistarCedulaCR = /^\d{1}-\d{3,4}-\d{3,5}$/;
+    return regeistarCedulaCR.test(cedula);
 }
 
 function validar() {
@@ -52,7 +52,7 @@ function validar() {
         Swal.fire({
             icon: "error",
             title: "Error",
-            text: "Formato de cédula inválido. Use X-XXXX-XXXX o X-XXX-XXXXX"
+            text: "Formato de cédula inválido. Use X-XXXX-XXXX"
         });
         return;
     } else {
