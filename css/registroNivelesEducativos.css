@@ -5,7 +5,9 @@
 .card {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.123);
-    margin-bottom: 87px;
+    margin-top: 100px;
+    margin-bottom: 250px;
+    height: 400px;
 }
 
 .tit-princ{
@@ -22,10 +24,18 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 30px;
 }
 
 #btnGuardar:hover {
     background: linear-gradient(90deg, #002080 33%, #F0F0F0 33%, #F0F0F0 66%, #B5001A 66%);
+}
+
+/*MÓVILES (max-width: 480px)*/
+@media (max-width: 480px) {
+    .card{
+        padding: 50px;
+    }
 }
 
 /*TABLETS (481px - 1023px)*/

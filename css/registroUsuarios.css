@@ -37,7 +37,8 @@
     }
 
     .card{
-        height: 540px;
+        height: 1000px;
+        margin-bottom: 200px;
     }
 
     .form-label{

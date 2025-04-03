@@ -4,13 +4,19 @@
 
 .tit-princ {
     margin-top: 72px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+}
+
+#tit-descripcion{
+    margin-top: 10px;
 }
 
 .card {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.123);
-    margin-bottom: 160px;
+    margin-top: 60px;
+    margin-bottom: 230px;
+    height: 320px;
 }
 
 #btnGuardar {
@@ -21,28 +27,30 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 25px;
 }
 
 #btnGuardar:hover {
     background: linear-gradient(90deg, #002080 33%, #F0F0F0 33%, #F0F0F0 66%, #B5001A 66%);
 }
 
+/*MÓVILES (max-width: 480px)*/
 @media (max-width: 480px) {
     #btnGuardar {
         margin: 30px;
     }
 }
 
-
+/*TABLETS (481px - 1023px)*/
 @media (min-width: 481px) and (max-width: 1023px) {
     .tit-princ {
         font-size: 40px;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 80px;
+        margin-bottom: 100px;
     }
 
     .card {
-        height: 550px;
+        height: 450px;
     }
 
     .form-label {

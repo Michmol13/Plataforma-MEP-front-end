@@ -2,9 +2,15 @@
     max-width: 600px;
 }
 
+.tit-princ{
+    margin-top: 73px;
+    margin-bottom: 50px;
+}
+
 .card {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.123);
+    height: 550px;
 }
 
 #btnGuardar {
@@ -15,6 +21,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 #btnGuardar:hover {
@@ -25,12 +32,13 @@
 @media (min-width: 481px) and (max-width: 1023px) {
     .tit-princ{
         font-size: 40px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
 
     .card{
-        height: 500px;
+        height: 800px;
+        margin-bottom: 200px;
     }
 
     .form-label{
@@ -45,5 +53,6 @@
         font-size: 25px;
         width: 150px;
         height: 80px;
+        margin-top: 50px;
     }
 }
