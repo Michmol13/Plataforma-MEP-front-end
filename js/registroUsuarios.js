@@ -47,7 +47,7 @@ function validar() {
     } 
 }
 
-function registrarUsuarios(){
+function registrarUsuarios() {
     const datosUsuario = {
         nombreCompleto: inputnombreCompleto.value,
         cedula: inputcedula.value,
@@ -55,8 +55,19 @@ function registrarUsuarios(){
         contrasena: inputcontrasena.value,
         confirmarContrasena: inputconfirmarContrasena.value,
         rol: inputrol.value,
-        estadoCuenta: inputestadoCuenta.value,
+        estadoCuenta: inputestadoCuenta.value === "true" // Asegurándose de que "true" o "false" se convierta en un booleano
     };
+
+    // Validar que las contraseñas coinciden antes de enviar
+    if (datosUsuario.contrasena !== datosUsuario.confirmarContrasena) {
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Las contraseñas no coinciden"
+        });
+        return;
+    }
+
     fetch("http://localhost:3000/registroUsuarios", {
         method: 'POST',
         headers: {
@@ -71,16 +82,22 @@ function registrarUsuarios(){
                 text: "El usuario ha sido registrado con éxito"
             });
         } else {
+            return response.json(); // Obtener respuesta de error desde el backend
+        }
+    })
+    .then(errorResponse => {
+        if (errorResponse) {
             Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "No se pudo registrar a el usuario"
+                text: errorResponse.msj || "No se pudo registrar al usuario"
             });
         }
     })
     .catch(error => {
         console.log(error);
     });
+
 }
 
 btnGuardar.addEventListener('click', validar);
