@@ -24,17 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 icon.classList.replace("fa-eye-slash", "fa-eye"); // Cambia a ojo abierto
             }
         });
-        
     }
 
     togglePasswordVisibility("txtcontrasena", "togglePassword");
     togglePasswordVisibility("txtconfirmarContrasena", "toggleConfirmPassword");
 });
 
+function validarCedula(cedula) {
+    const regexCedulaCR = /^\d{1}-\d{3,4}-\d{3,5}$/;
+    return regexCedulaCR.test(cedula);
+}
+
 function validar() {
     let error = false;
-    for (let i = 0; i < inputsRequeridos.length; i++){
-        if (inputsRequeridos[i].value == ""){
+    
+    for (let i = 0; i < inputsRequeridos.length; i++) {
+        if (inputsRequeridos[i].value == "") {
             inputsRequeridos[i].classList.add('error');
             error = true;
         } else {
@@ -42,9 +47,30 @@ function validar() {
         }
     }
 
-    if(error == false){
+    if (!validarCedula(inputcedula.value)) {
+        inputcedula.classList.add('error');
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Formato de cédula inválido. Use X-XXXX-XXXX o X-XXX-XXXXX"
+        });
+        return;
+    } else {
+        inputcedula.classList.remove('error');
+    }
+
+    if (inputcontrasena.value !== inputconfirmarContrasena.value) {
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Las contraseñas no coinciden"
+        });
+        return;
+    }
+
+    if (!error) {
         registrarUsuarios();
-    } 
+    }
 }
 
 function registrarUsuarios() {
@@ -55,18 +81,8 @@ function registrarUsuarios() {
         contrasena: inputcontrasena.value,
         confirmarContrasena: inputconfirmarContrasena.value,
         rol: inputrol.value,
-        estadoCuenta: inputestadoCuenta.value === "true" // Asegurándose de que "true" o "false" se convierta en un booleano
+        estadoCuenta: inputestadoCuenta.value === "true" // Asegurar que se convierta en booleano
     };
-
-    // Validar que las contraseñas coinciden antes de enviar
-    if (datosUsuario.contrasena !== datosUsuario.confirmarContrasena) {
-        Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Las contraseñas no coinciden"
-        });
-        return;
-    }
 
     fetch("http://localhost:3000/registroUsuarios", {
         method: 'POST',
@@ -97,7 +113,6 @@ function registrarUsuarios() {
     .catch(error => {
         console.log(error);
     });
-
 }
 
 btnGuardar.addEventListener('click', validar);
