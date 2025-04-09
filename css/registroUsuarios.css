@@ -5,7 +5,7 @@
 .card {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.123);
-    margin-bottom: 87px;
+    margin-bottom: 150px;
 }
 
 .tit-princ{
@@ -28,16 +28,46 @@
     background: linear-gradient(90deg, #002080 33%, #F0F0F0 33%, #F0F0F0 66%, #B5001A 66%);
 }
 
+/*MÓVILES (max-width: 480px)*/
+@media (max-width: 480px) {
+    .tit-princ {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 30px;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #btnGuardar {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .form-label{
+        font-size: 20px;
+    }
+
+    .form-select{
+        font-size: 20px;
+    }
+
+    option{
+        font-size: 15px;
+    }
+}
+
 /*TABLETS (481px - 1023px)*/
 @media (min-width: 481px) and (max-width: 1023px) {
     .tit-princ{
-        font-size: 40px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        font-size: 65px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-bottom: 100px;
     }
 
     .card{
-        height: 1000px;
+        height: 1050px;
         margin-bottom: 200px;
     }
 
@@ -49,10 +79,73 @@
         height: 50px;
     }
 
+    .form-select{
+        font-size: 30px;
+    }
+
+    option{
+        font-size: 15px;
+    }
+
     #btnGuardar{
-        font-size: 25px;
-        width: 150px;
+        font-size: 30px;
+        width: 170px;
         height: 80px;
-        margin-top: 30px;
+        margin-top: 35px;
+        margin-bottom: 20px;
+    }
+}
+
+/*PANTALLAS GRANDES (1024px - 1902px)*/
+@media (min-width: 1024px) and (max-width: 1902px){
+    .tit-princ{
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .form-label{
+        font-size: 20px;
+    }
+
+    .form-select{
+        font-size: 20px;
+    }
+
+    option{
+        font-size: 15px;
+    }
+
+    #btnGuardar{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/*PANTALLAS MUY GRANDES (más de 1902px)*/
+@media (min-width: 1903px){
+    .tit-princ{
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-bottom: 100px;
+    }
+
+    .form-label{
+        font-size: 20px;
+    }
+
+    .form-select{
+        font-size: 20px;
+    }
+
+    option{
+        font-size: 20px;
+    }
+
+    #btnGuardar{
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 }
