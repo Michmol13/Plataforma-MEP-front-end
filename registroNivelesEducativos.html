@@ -61,10 +61,13 @@
                 <div class="mb-3">
                     <label for="txtnombreNivel" class="form-label">Nombre del Nivel Educativo:</label>
                     <input type="text" class="form-control" id="txtnombreNivel" required>
+                    <span id="error-nombreNivel" style="color:red; display:none;">Este campo es obligatorio.</span>
+                    
                 </div>
                 <div class="mb-3">
                     <label for="txtdescripcionNivel" class="form-label">Descripción del Nivel Educativo:</label>
                     <input type="text" class="form-control" id="txtdescripcionNivel" rows="4" required>
+                    <span id="error-descripcionNivel" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="mb-3">
                     <label for="txtestadoNivel" class="form-label">Estado del Nivel Educativo:</label>
@@ -72,6 +75,7 @@
                         <option value="true">Activo</option>
                         <option value="false">Inactivo</option>
                     </select>
+                    <span id="error-estadoNivel" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="btns text-center">
                     <button type="button" id="btnGuardar">Guardar</button>
