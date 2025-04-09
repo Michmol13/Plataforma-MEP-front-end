@@ -28,30 +28,139 @@
     background: linear-gradient(90deg, #002080 33%, #F0F0F0 33%, #F0F0F0 66%, #B5001A 66%);
 }
 
-/*TABLETS (481px - 1023px)*/
-@media (min-width: 481px) and (max-width: 1023px) {
-    .tit-princ{
-        font-size: 40px;
+/*MÓVILES (max-width: 480px)*/
+@media (max-width: 480px) {
+    .tit-princ {
         margin-top: 20px;
-        margin-bottom: 30px;
+        padding: 30px;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
     }
 
     .card{
-        height: 640px;
+        padding: 50px;
+        height: 520px;
+        margin-bottom: 120px;
     }
 
     .form-label{
-        font-size: 30px;
+        font-size: 20px;
     }
 
-    .form-control{
+    .form-select{
+        font-size: 20px;
+    }
+
+    option{
+        font-size: 15px;
+    }
+
+    #btnGuardar {
+        margin: 30px;
+    }
+}
+
+/*TABLETS (481px - 1023px)*/
+@media (min-width: 481px) and (max-width: 1023px) {
+    .tit-princ{
+        font-size: 65px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-bottom: 100px;
+    }
+
+    .card {
+        height: 730px;
+        margin-bottom: 190px;
+    }
+
+    .form-label {
+        font-size: 35px;
+    }
+
+    .form-control {
         height: 50px;
     }
 
-    #btnGuardar{
-        font-size: 25px;
-        width: 150px;
+    .form-select{
+        font-size: 35px;
+    }
+
+    option{
+        font-size: 18px;
+    }
+
+    #btnGuardar {
+        font-size: 30px;
+        width: 160px;
         height: 80px;
-        margin-top: 20px;
+        margin-top: 35px;
+    }
+}
+
+/*PANTALLAS GRANDES (1024px - 1902px)*/
+@media (min-width: 1024px) and (max-width: 1902px){
+    .tit-princ{
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-bottom: 100px;
+    }
+
+    .card {
+        height: 530px;
+        margin-bottom: 150px;
+    }
+
+    .form-label{
+        font-size: 22px;
+    }
+
+    .form-select{
+        font-size: 22px;
+    }
+
+    option{
+        font-size: 18px;
+    }
+
+    #btnGuardar {
+        font-size: 22px;
+        margin-top: 20px ;
+        margin-bottom: 10px;
+    }
+}
+
+/*PANTALLAS MUY GRANDES (más de 1902px)*/
+@media (min-width: 1903px){
+    .tit-princ{
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-bottom: 100px;
+    }
+
+    .card{
+        height: 520px;
+        margin-bottom: 150px;
+    }
+
+    .form-label{
+        font-size: 20px;
+    }
+
+    .form-select{
+        font-size: 20px;
+    }
+
+    option{
+        font-size: 20px;
+    }
+
+    #btnGuardar {
+        font-size: 20px;
+        margin-top: 20px ;
+        margin-bottom: 20px;
     }
 }

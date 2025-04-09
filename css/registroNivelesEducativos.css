@@ -16,7 +16,6 @@
 
 .tit-princ{
     margin-top: 73px;
-    margin-bottom: 50px;
 }
 
 
@@ -37,17 +36,38 @@
 
 /*MÓVILES (max-width: 480px)*/
 @media (max-width: 480px) {
+    .tit-princ {
+        margin-top: 20px;
+        padding: 30px;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+    }
+
     .card{
         padding: 50px;
+    }
+
+    .form-label{
+        font-size: 20px;
+    }
+
+    .form-select{
+        font-size: 20px;
+    }
+
+    option{
+        font-size: 15px;
     }
 }
 
 /*TABLETS (481px - 1023px)*/
 @media (min-width: 481px) and (max-width: 1023px) {
     .tit-princ{
-        font-size: 40px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        font-size: 60px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-bottom: 100px;
     }
 
     .card{
@@ -62,21 +82,74 @@
         height: 50px;
     }
 
+    .form-select{
+        font-size: 30px;
+    }
+
+    option{
+        font-size: 15px;
+    }
+
     #btnGuardar{
         font-size: 25px;
         width: 150px;
         height: 80px;
         margin-top: 30px;
     }
-    
-input:invalid, select:invalid {
-    border: 2px solid red;
-    background-color: #f8d7da; /* Fondo rojo claro */
 }
 
-input.error, select.error {
-    border: 2px solid red;
-    background-color: #f8d7da;
+/*PANTALLAS GRANDES (1024px - 1902px)*/
+@media (min-width: 1024px) and (max-width: 1902px){
+    .tit-princ{
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-bottom: 100px;
+    }
+
+    .form-label{
+        font-size: 20px;
+    }
+
+    .form-select{
+        font-size: 20px;
+    }
+
+    option{
+        font-size: 15px;
+    }
+
+    #btnGuardar {
+        font-size: 22px;
+        margin-top: 10px ;
+        margin-bottom: 30px;
+    }
 }
 
+/*PANTALLAS MUY GRANDES (más de 1902px)*/
+@media (min-width: 1903px){
+    .tit-princ{
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 80px;
+        margin-bottom: 100px;
+    }
+
+    .form-label{
+        font-size: 20px;
+    }
+
+    .form-select{
+        font-size: 20px;
+    }
+
+    option{
+        font-size: 20px;
+    }
+
+    #btnGuardar {
+        font-size: 20px;
+        margin-top: 10px ;
+        margin-bottom: 30px;
+    }
 }
