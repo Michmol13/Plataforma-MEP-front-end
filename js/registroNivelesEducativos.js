@@ -3,51 +3,42 @@ const inputdescripcionNivel = document.getElementById("txtdescripcionNivel");
 const inputestadoNivel = document.getElementById("txtestadoNivel");
 const btnGuardar = document.querySelector("#btnGuardar");
 
-const inputsRequeridos = document.querySelectorAll('input[required], textarea[required], select[required]');
+const inputsRequeridos = document.querySelectorAll('input[required]');
 
-// Añadir un mensaje de error debajo de cada campo
-function crearMensajeError(campo) {
-    const mensajeError = document.createElement('span');
-    mensajeError.classList.add('error-msg');
-    mensajeError.style.color = 'red';
-    mensajeError.textContent = 'Este campo es obligatorio.';
-    campo.parentElement.appendChild(mensajeError);
+function mostrarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "block";
 }
 
-// Función de validación
+function ocultarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "none";
+}
+
 function validar() {
     let error = false;
 
-    // Limpiar los mensajes de error anteriores
-    document.querySelectorAll('.error-msg').forEach(msg => msg.remove());
-
-    // Limpiar los bordes rojos de los campos anteriores
-    document.querySelectorAll('input, textarea, select').forEach(input => {
-        input.classList.remove('error');
-    });
-
     for (let i = 0; i < inputsRequeridos.length; i++) {
         if (inputsRequeridos[i].value.trim() === "") {
-            inputsRequeridos[i].classList.add('error');
-            crearMensajeError(inputsRequeridos[i]);
+            inputsRequeridos[i].classList.add('input-error');
+            mostrarMensajeError(inputsRequeridos[i]);
             error = true;
         } else {
-            inputsRequeridos[i].classList.remove('error');
+            inputsRequeridos[i].classList.remove('input-error');
+            ocultarMensajeError(inputsRequeridos[i]);
         }
     }
-
-    if (!error) {
-        registrarNivelEducativo();
-    } else {
+    if (error) {
         Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Por favor, complete todos los campos requeridos.',
+            icon: 'warning',
+            title: 'Campos obligatorios',
+            text: 'Por favor complete todos los campos resaltados.',
         });
+    } else {
+        registrarNivelEducativo();
     }
 }
 
-// Función para registrar el nivel educativo
 function registrarNivelEducativo() {
     const datosNivel = {
         nombreNivel: inputnombreNivel.value,
@@ -82,5 +73,4 @@ function registrarNivelEducativo() {
     });
 }
 
-// Agregar evento al botón "Guardar"
 btnGuardar.addEventListener('click', validar);

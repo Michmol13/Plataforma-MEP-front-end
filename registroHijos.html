@@ -61,14 +61,22 @@
                 <div class="mb-3">
                     <label for="txtnombrecompletoHijo" class="form-label">Nombre de su Hijo:</label>
                     <input type="text" class="form-control" id="txtnombrecompletoHijo" required>
+                    <span id="error-nombrecompletoHijo" style="color:red; display:none;">Este campo es obligatorio.</span>
+                </div>
+                <div>
+                    <label for="txtcedula" class="form-label">Cédula:</label>
+                    <input type="text" class="form-control" id="txtcedula" required>
+                    <span id="error-cedula" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="mb-3">
                     <label for="txtnivelEducativo" class="form-label">Nivel Educativo:</label>
                     <input type="text" class="form-control" id="txtnivelEducativo" required>
+                    <span id="error-nivelEducativo" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="mb-3">
                     <label for="txtannoLectivo" class="form-label">Año Lectivo:</label>
                     <input type="text" class="form-control" id="txtannoLectivo" required>
+                    <span id="error-annoLectivo" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="btns text-center">
                     <button type="button" id="btnGuardar">Guardar</button>
