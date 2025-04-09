@@ -1,7 +1,7 @@
 const tablaUsuarios = document.getElementById('tabla-registroUsuarios').querySelector('tbody');
 
 async function cargarTabla() {
-    fetch('http://localhost:3000/tabla-registroUsuarios',{
+    fetch('http://localhost:3000/registroUsuarios',{
         method: 'GET'
         ,headers: {
             'Content-Type': 'application/json'
