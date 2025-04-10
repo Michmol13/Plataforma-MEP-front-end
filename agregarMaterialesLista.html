@@ -64,11 +64,26 @@
         </div>
     </nav>
 
-
-
-
-
-
+    <div class="container mt-5">
+        <h2 class="tit-princ text-center">Agregar Materiales Escolares</h2>
+        <div class="card p-4 shadow">
+            <form>
+                <div class="mb-3">
+                    <label for="sltregistroListasUtiles" class="form-label">Listas de Utiles Escolares:</label>
+                    <select id="sltregistroListasUtiles" class="form-select" required></select>
+                    <span id="error-listaUtiles" style="color:red; display:none;">Este campo es obligatorio.</span>
+                </div>
+                <div class="mb-3">
+                    <label for="sltMateriales" class="form-label">Materiales Escolares:</label>
+                    <select id="sltMateriales" class="form-select" required></select>
+                    <span id="error-listaMateriales" style="color:red; display:none;">Este campo es obligatorio.</span>
+                </div>
+                <div class="btns text-center">
+                    <button type="button" id="btnGuardar">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
     <footer class="footer">

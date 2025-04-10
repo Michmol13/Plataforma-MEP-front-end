@@ -1,3 +1,35 @@
-.container-fluid{
-    margin-bottom: 675px;
+.input-error {
+    border: 2px solid red;
+}
+
+.container {
+    max-width: 600px;
+}
+
+.card {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.123);
+    margin-top: 100px;
+    margin-bottom: 250px;
+    height: 400px;
+}
+
+.tit-princ{
+    margin-top: 73px;
+}
+
+
+#btnGuardar {
+    background: linear-gradient(90deg, #002B7F 33%, #FFFFFF 33%, #FFFFFF 66%, #CE1126 66%);
+    color: rgb(0, 0, 0);
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+#btnGuardar:hover {
+    background: linear-gradient(90deg, #002080 33%, #F0F0F0 33%, #F0F0F0 66%, #B5001A 66%);
 }
