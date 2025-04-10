@@ -2,6 +2,7 @@ const inputnombrecompletoHijo = document.getElementById("txtnombrecompletoHijo")
 const inputcedula = document.getElementById("txtcedula");
 const inputnivelEducativo = document.getElementById("txtnivelEducativo");
 const inputannoLectivo = document.getElementById("txtannoLectivo");
+const listaHijos = document.getElementById("txtniveles-educativos");
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required]');
@@ -33,6 +34,15 @@ function validar() {
             inputsRequeridos[i].classList.remove('input-error');
             ocultarMensajeError(inputsRequeridos[i]);
         }
+    }
+
+    if (inputnivelEducativo.value.trim() === "") {
+        inputnivelEducativo.classList.add('input-error');
+        mostrarMensajeError(inputnivelEducativo);
+        error = true;
+    } else {
+        inputnivelEducativo.classList.remove('input-error');
+        ocultarMensajeError(inputnivelEducativo);
     }
 
     if (inputcedula.value.trim() !== "" && !validarCedula(inputcedula.value)) {
@@ -91,5 +101,24 @@ function registrarHijo(){
     
 }
 
+async function mostrarNivelesEducativos(){
+    fetch('http://localhost:3000/registroNivelesEducativos', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        listaHijos.innerHTML = ''; 
+        data.forEach(nivelEducativo => {
+            const nuevaOpcion = document.createElement("option");
+            nuevaOpcion.value = nivelEducativo._id;
+            nuevaOpcion.textContent = nivelEducativo.nombreNivel;
+            listaHijos.appendChild(nuevaOpcion);
+        })
+    });
+}
 
+mostrarNivelesEducativos();
 btnGuardar.addEventListener('click', validar);
