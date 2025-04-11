@@ -10,15 +10,15 @@ async function cargarTabla() {
     .then(response => response.json())
     .then(data => {
         tablaMateriales.innerHTML = ''; // Limpiar la tabla antes de agregar nuevos datos
-        data.forEach(nivel => {
+        data.forEach(material => {
             const fila = document.createElement('tr');
 
             fila.innerHTML = `
-                <td>${nivel.nombreMateriales}</td>
-                <td>${nivel.descripcion}</td>
-                <td>${nivel.categoria}</td>
-                <td>${nivel.unidadMedida}</td>
-                <td>${nivel.estado ? 'Activo' : 'Inactivo'}</td>
+                <td>${material.nombreMaterial}</td>
+                <td>${material.descripcion}</td>
+                <td>${material.categoria}</td>
+                <td>${material.unidadMedida}</td>
+                <td>${material.estado ? 'Activo' : 'Inactivo'}</td>
             `;
             tablaMateriales.appendChild(fila);
         });
