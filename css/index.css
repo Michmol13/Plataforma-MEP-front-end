@@ -66,6 +66,7 @@ body {
     margin: auto;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .txtprincipal::before {
@@ -132,6 +133,26 @@ body {
 .container {
     max-width: 700px;
     margin: auto;
+}
+
+.title2 {
+    margin-top: 10px; /* Reduce este valor para acercarlo a la sección anterior */
+}
+
+.recursos {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 20px;
+}
+
+.recurso-item {
+    text-align: center;
+}
+
+.recurso-item img {
+    width: 100px; /* Puedes ajustar el tamaño según lo que necesites */
+    height: auto;
 }
 
 .footer-logo {
