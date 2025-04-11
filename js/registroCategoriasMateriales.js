@@ -4,20 +4,38 @@ const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required]');
 
+function mostrarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "block";
+}
+
+function ocultarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "none";
+}
+
 function validar() {
     let error = false;
-    for (let i = 0; i < inputsRequeridos.length; i++){
-        if (inputsRequeridos[i].value == ""){
-            inputsRequeridos[i].classList.add('error');
+
+    for (let i = 0; i < inputsRequeridos.length; i++) {
+        if (inputsRequeridos[i].value.trim() === "") {
+            inputsRequeridos[i].classList.add('input-error');
+            mostrarMensajeError(inputsRequeridos[i]);
             error = true;
         } else {
-            inputsRequeridos[i].classList.remove('error');
+            inputsRequeridos[i].classList.remove('input-error');
+            ocultarMensajeError(inputsRequeridos[i]);
         }
     }
-
-    if(error == false){
+    if (error) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos obligatorios',
+            text: 'Por favor complete todos los campos resaltados.',
+        });
+    } else {
         registrarCategoria();
-    } 
+    }
 }
 
 function registrarCategoria(){
