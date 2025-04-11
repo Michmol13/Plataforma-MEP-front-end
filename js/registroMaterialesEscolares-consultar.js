@@ -1,7 +1,7 @@
 const tablaMateriales = document.getElementById('tabla-registroMaterialesEscolares').querySelector('tbody');
 
 async function cargarTabla() {
-    fetch('http://localhost:3000/registroMaterilesEscolares', {
+    fetch("http://localhost:3000/registroMaterialesEscolares", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
