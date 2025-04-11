@@ -136,13 +136,18 @@ body {
 }
 
 .title2 {
-    margin-top: 10px; /* Reduce este valor para acercarlo a la sección anterior */
+    margin-top: 10px;
+    margin-bottom: 20px; 
+    font-size: 40px;
+    font-weight: bold;
+    color: #070e33;
+    text-align: center;
 }
 
 .recursos {
     display: flex;
     justify-content: center; /* Centra los elementos horizontalmente */
-    gap: 20px; /* Espacio entre los elementos */
+    gap: 60px; /* Espacio entre los elementos */
     padding: 20px;
 }
 
@@ -151,8 +156,22 @@ body {
 }
 
 .recurso-item img {
-    width: 100px; /* Puedes ajustar el tamaño según lo que necesites */
+    width: 250px;
     height: auto;
+    border-radius: 5px;
+}
+
+.recurso-item p{
+    font-size: 20px;
+    margin-top: 10px;
+    color: #070e33;
+    font-weight: bold;
+    text-align: center;
+}
+
+.recurso-item a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .footer-logo {
@@ -274,6 +293,48 @@ body {
         height: 50px;
     }
 
+    .title2 {
+        margin-top: 10px;
+        margin-bottom: 20px; 
+        font-size: 40px;
+        font-weight: bold;
+        color: #070e33;
+        text-align: center;
+    }
+    
+    .recursos {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 20px; 
+        padding: 20px;
+    }
+    
+    .recurso-item {
+        text-align: center;
+        width: 100%;       
+        max-width: 300px; 
+    }
+    
+    .recurso-item img {
+        width: 250px;
+        height: auto;
+        border-radius: 5px;
+    }
+    
+    .recurso-item p{
+        font-size: 20px;
+        margin-top: 10px;
+        color: #070e33;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .recurso-item a {
+        text-decoration: none;
+        color: inherit;
+    }
+
     .footer {
         font-size: 16px;
     }
@@ -371,6 +432,39 @@ body {
         font-size: 30px;
     }
 
+    .title2 {
+        font-size: 36px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .recursos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .recurso-item {
+        width: 45%; /* Dos por fila, con espacio entre ellos */
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .recurso-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .recurso-item p {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #070e33;
+        font-weight: bold;
+    }
+
     .footer {
         padding: 20px;
     }
@@ -400,7 +494,7 @@ body {
 
     .txtprincipal {
         height: 550px;
-        margin-bottom: 150px;
+        margin-bottom: 100px;
     }
 
     .txtprincipal-overlay h1 {
