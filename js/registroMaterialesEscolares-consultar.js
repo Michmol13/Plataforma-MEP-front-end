@@ -18,7 +18,6 @@ async function cargarTabla() {
                 <td>${nivel.descripcion}</td>
                 <td>${nivel.categoria}</td>
                 <td>${nivel.unidadMedida}</td>
-                <td>${nivel.cantidad}</td>
                 <td>${nivel.estado ? 'Activo' : 'Inactivo'}</td>
             `;
             tablaMateriales.appendChild(fila);
