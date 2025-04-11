@@ -3,25 +3,42 @@ const inputdescripcion = document.getElementById("txtdescripcion");
 const inputcategoria = document.getElementById("txtcategoria");
 const inputunidadMedida = document.getElementById("txtunidadMedida");
 const inputestado = document.getElementById("txtestado");
+const listaMateriales = document.getElementById("txtcategoria")
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required], textarea[required], select[required]');
+function mostrarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "block";
+}
 
+function ocultarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "none";
+}
 
 function validar() {
     let error = false;
-    for (let i = 0; i < inputsRequeridos.length; i++){
-        if (inputsRequeridos[i].value == ""){
-            inputsRequeridos[i].classList.add('error');
+
+    for (let i = 0; i < inputsRequeridos.length; i++) {
+        if (inputsRequeridos[i].value.trim() === "") {
+            inputsRequeridos[i].classList.add('input-error');
+            mostrarMensajeError(inputsRequeridos[i]);
             error = true;
         } else {
-            inputsRequeridos[i].classList.remove('error');
+            inputsRequeridos[i].classList.remove('input-error');
+            ocultarMensajeError(inputsRequeridos[i]);
         }
     }
-
-    if(error == false){
+    if (error) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos obligatorios',
+            text: 'Por favor complete todos los campos resaltados.',
+        });
+    } else {
         registrarMaterialesEscolares();
-    } 
+    }
 }
 
 function registrarMaterialesEscolares() {
@@ -60,5 +77,25 @@ function registrarMaterialesEscolares() {
     });
 }
 
-// Agregar evento al botón "Guardar"
+async function mostrarCategoriaMateriales(){
+    fetch("http://localhost:3000/registroCategoria", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        listaMateriales.innerHTML = ''; 
+        data.forEach(categoria => {
+            const nuevaOpcion = document.createElement("option");
+            nuevaOpcion.value = categoria._id;
+            nuevaOpcion.textContent = categoria.nombre;
+            listaMateriales.appendChild(nuevaOpcion);
+        })
+    });
+}
+
+mostrarCategoriaMateriales();
+
 btnGuardar.addEventListener('click', validar);

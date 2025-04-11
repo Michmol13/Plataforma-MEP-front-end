@@ -71,18 +71,22 @@
                 <div class="mb-3">
                     <label for="txtnombreMaterial" class="form-label">Nombre Material:</label>
                     <input type="text" class="form-control" id="txtnombreMaterial" required>
+                    <span id="error-nombreMaterial" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="mb-3">
                     <label for="txtdescripcion" class="form-label">Descripción:</label>
                     <input type="text" class="form-control" id="txtdescripcion" rows="4" required>
+                    <span id="error-descripcion" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="mb-3">
                     <label for="txtcategoria" class="form-label">Categoría:</label>
-                    <input type="text" class="form-control" id="txtcategoria" rows="4" required>
+                    <select id="txtcategoria" class="form-select" required></select>
+                    <span id="error-categoria" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="mb-3">
                     <label for="txtunidadMedida" class="form-label">Unidad de Medida:</label>
                     <input type="text" class="form-control" id="txtunidadMedida" rows="4" required>
+                    <span id="error-unidadMedida" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="mb-3">
                     <label for="txtestado" class="form-label">Estado:</label>
@@ -90,6 +94,7 @@
                         <option value="true">Activo</option>
                         <option value="false">Inactivo</option>
                     </select>
+                    <span id="error-estado" style="color:red; display:none;">Este campo es obligatorio.</span>
                 </div>
                 <div class="btns text-center">
                     <button type="button" id="btnGuardar">Guardar</button>
