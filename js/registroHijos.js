@@ -98,7 +98,6 @@ function registrarHijo(){
     .catch(error => {
         console.log(error);
     });
-    
 }
 
 async function mostrarNivelesEducativos(){
