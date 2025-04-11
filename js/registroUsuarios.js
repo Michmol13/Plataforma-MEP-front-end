@@ -9,6 +9,40 @@ const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required]');
 
+function mostrarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "block";
+}
+
+function ocultarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "none";
+}
+
+function validar() {
+    let error = false;
+
+    for (let i = 0; i < inputsRequeridos.length; i++) {
+        if (inputsRequeridos[i].value.trim() === "") {
+            inputsRequeridos[i].classList.add('input-error');
+            mostrarMensajeError(inputsRequeridos[i]);
+            error = true;
+        } else {
+            inputsRequeridos[i].classList.remove('input-error');
+            ocultarMensajeError(inputsRequeridos[i]);
+        }
+    }
+    if (error) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos obligatorios',
+            text: 'Por favor complete todos los campos resaltados.',
+        });
+    } else {
+        registrarUsuarios();
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     function togglePasswordVisibility(inputId, buttonId) {
         const input = document.getElementById(inputId);
@@ -37,41 +71,48 @@ function validarCedula(cedula) {
 
 function validar() {
     let error = false;
-    
+
     for (let i = 0; i < inputsRequeridos.length; i++) {
-        if (inputsRequeridos[i].value == "") {
-            inputsRequeridos[i].classList.add('error');
+        if (inputsRequeridos[i].value.trim() === "") {
+            inputsRequeridos[i].classList.add('input-error');
+            mostrarMensajeError(inputsRequeridos[i]);
             error = true;
         } else {
-            inputsRequeridos[i].classList.remove('error');
+            inputsRequeridos[i].classList.remove('input-error');
+            ocultarMensajeError(inputsRequeridos[i]);
         }
     }
 
-    if (!validarCedula(inputcedula.value)) {
-        inputcedula.classList.add('error');
-        Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Formato de cédula inválido. Use X-XXXX-XXXX"
-        });
-        return;
+    if (inputnivelEducativo.value.trim() === "") {
+        inputnivelEducativo.classList.add('input-error');
+        mostrarMensajeError(inputnivelEducativo);
+        error = true;
     } else {
-        inputcedula.classList.remove('error');
+        inputnivelEducativo.classList.remove('input-error');
+        ocultarMensajeError(inputnivelEducativo);
     }
 
-    if (inputcontrasena.value !== inputconfirmarContrasena.value) {
+    if (inputcedula.value.trim() !== "" && !validarCedula(inputcedula.value)) {
+        inputcedula.classList.add('input-error');
+        mostrarMensajeError(inputcedula);
         Swal.fire({
             icon: "error",
-            title: "Error",
-            text: "Las contraseñas no coinciden"
+            title: "Cédula inválida",
+            text: "La cédula no tiene el formato correcto. Use X-XXXX-XXXX"
         });
         return;
-    }
-
-    if (!error) {
+    } 
+    if (error) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos obligatorios',
+            text: 'Por favor complete todos los campos resaltados.',
+        });
+    } else {
         registrarUsuarios();
     }
 }
+
 
 function registrarUsuarios() {
     const datosUsuario = {
