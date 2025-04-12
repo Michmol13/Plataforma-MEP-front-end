@@ -88,6 +88,13 @@ async function mostrarCategoriaMateriales(){
     .then(response => response.json())
     .then(data => {
         listaMateriales.innerHTML = ''; 
+        const opcionDefault = document.createElement("option");
+        opcionDefault.value = "";
+        opcionDefault.textContent = "Seleccione una opción";
+        opcionDefault.disabled = true;
+        opcionDefault.selected = true;
+        listaMateriales.appendChild(opcionDefault);
+        
         data.forEach(categoria => {
             const nuevaOpcion = document.createElement("option");
             nuevaOpcion.value = categoria._id;

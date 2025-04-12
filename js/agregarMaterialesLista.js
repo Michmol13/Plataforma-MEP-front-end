@@ -12,6 +12,13 @@ async function mostrarListaUtiles(){
     .then(response => response.json())
     .then(data => {
         listaUtiles.innerHTML = ''; //Instrucción que limpia la tabla antes de cargarla
+        const opcionDefault = document.createElement("option");
+        opcionDefault.value = "";
+        opcionDefault.textContent = "Seleccione una opción";
+        opcionDefault.disabled = true;
+        opcionDefault.selected = true;
+        listaUtiles.appendChild(opcionDefault);
+
         data.forEach(lista => {
             const nuevaOpcion = document.createElement("option");
             nuevaOpcion.value = lista.nombreLista;
@@ -31,6 +38,13 @@ async function mostrarMateriales(){
     .then(response => response.json())
     .then(data => {
         listaMateriales.innerHTML = ''; //Instrucción que limpia la tabla antes de cargarla
+        const opcionDefault = document.createElement("option");
+        opcionDefault.value = "";
+        opcionDefault.textContent = "Seleccione una opción";
+        opcionDefault.disabled = true;
+        opcionDefault.selected = true;
+        listaMateriales.appendChild(opcionDefault);
+
         data.forEach(material => {
             const nuevaOpcion = document.createElement("option");
             nuevaOpcion.value = material._id;

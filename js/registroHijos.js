@@ -110,6 +110,13 @@ async function mostrarNivelesEducativos(){
     .then(response => response.json())
     .then(data => {
         listaHijos.innerHTML = ''; 
+        const opcionDefault = document.createElement("option");
+        opcionDefault.value = "";
+        opcionDefault.textContent = "Seleccione una opción";
+        opcionDefault.disabled = true;
+        opcionDefault.selected = true;
+        listaHijos.appendChild(opcionDefault);
+
         data.forEach(nivelEducativo => {
             const nuevaOpcion = document.createElement("option");
             nuevaOpcion.value = nivelEducativo._id;
