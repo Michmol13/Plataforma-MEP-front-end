@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro escolar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/registroUsuarios.css">
+    <link rel="stylesheet" href="css/verListas.css">
 </head>
 <body>
     <nav class="container-fluid navbar navbar-expand-lg navbar-dark">
@@ -69,72 +68,90 @@
             </div>
         </div>
     </nav>
-
-    <div class="container mt-5">
-        <h2 class="tit-princ text-center">Registro de Usuario</h2>
-        <div class="card p-4 shadow">
-            <form>
-                <div class="mb-3">
-                    <label for="txtnombreCompleto" class="form-label">Nombre completo:</label>
-                    <input type="text" class="form-control" id="txtnombreCompleto" required>
-                    <span id="error-nombreCompleto" style="color:red; display:none;">Este campo es obligatorio.</span>
-                </div>
-                <div class="mb-3">
-                    <label for="txtcedula" class="form-label">Cedula:</label>
-                    <input type="text" class="form-control" id="txtcedula" rows="4" required>
-                    <span id="error-cedula" style="color:red; display:none;">Este campo es obligatorio.</span>
-                </div>
-                <div class="mb-3">
-                    <label for="txtcorreoElectronico" class="form-label">Correo electronico:</label>
-                    <input type="text" class="form-control" id="txtcorreoElectronico" required>
-                    <span id="error-correoElectronico" style="color:red; display:none;">Este campo es obligatorio.</span>
-                </div>
-                <div class="mb-3">
-                    <label for="txtcontrasena" class="form-label">Contraseña:</label>
-                    <div class="input-group">
-                        <input type="password" class="form-control" id="txtcontrasena" required>
-                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                            <i class="fa fa-eye"></i>
-                    
-                        </button>
-                        <span id="error-contrasena" style="color:red; display:none;">Este campo es obligatorio.</span>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="txtconfirmarContrasena" class="form-label">Confirmar contraseña:</label>
-                    <div class="input-group">
-                        <input type="password" class="form-control" id="txtconfirmarContrasena" required>
-                        <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
-                            <i class="fa fa-eye"></i>
-                        </button>
-                        <span id="error-confirmarContrasena" style="color:red; display:none;">Este campo es obligatorio.</span>
-                    </div>
-                </div>             
-                <div class="mb-3">
-                    <label for="txtrol" class="form-label">Rol:</label>
-                    <select class="form-select" id="txtrol" required>
-                        <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="Maestro">Maestro</option>
-                        <option value="Padre de familia">Padre de familia</option>
-                    </select>
-                    <span id="error-rol" style="color:red; display:none;">Este campo es obligatorio.</span>
-                </div>
-                <div class="mb-3">
-                    <label for="txtestadoCuenta" class="form-label">Estado de cuenta:</label>
-                    <select class="form-select" id="txtestadoCuenta" required>
-                        <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="true">Activo</option>
-                        <option value="false">Inactivo</option>
-                    </select>
-                    <span id="error-estadoCuenta" style="color:red; display:none;">Este campo es obligatorio.</span>
-                </div>
-                <div class="btns text-center">
-                    <button type="button" id="btnGuardar">Guardar</button>
-                </div>
-            </form>
+    
+    <div id="cont-princ" class="container mt-5">
+        <h2 class="tit-princ text-center">Listas</h2>
+        <div id="card1" class="card p-4 shadow">
+            <section class="mb-5">
+                <h2>Lista de Usuarios</h2>
+                <table id="tabla-registroUsuarios" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre Completo</th>
+                            <th>Cédula</th>
+                            <th>Correo Electrónico</th>
+                            <th>Rol</th>
+                            <th>Estado Cuenta</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </div>
+        <div id="card2" class="card p-4 shadow">
+            <section class="mb-5">
+                <h2>Lista de Niveles Educativos</h2>
+                <table id="tabla-registroNivelesEducativos" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre Nivel</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </div>
+        <div id="card3" class="card p-4 shadow">
+            <section class="mb-5">
+                <h2>Lista de Materiales Escolares</h2>
+                <table id="tabla-registroMaterialesEscolares" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre Material</th>
+                            <th>Descripción</th>
+                            <th>Categoría</th>
+                            <th>Unidad Medida</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </div>
+        <div id="card4" class="card p-4 shadow">
+            <section class="mb-5">
+                <h2>Lista de Hijos</h2>
+                <table id="tabla-registroHijos" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre Completo</th>
+                            <th>Cédula</th>
+                            <th>Nivel Educativo</th>
+                            <th>Año Lectivo</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </div>
+        <div id="card5" class="card p-4 shadow">
+            <section class="mb-5">
+                <h2>Lista de Categorías de Materiales</h2>
+                <table id="tabla-registroCategoria" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
         </div>
     </div>
-
+    
     <footer class="footer">
         <div class="container text-center">
             <img src="./img/logo-white.png" alt="Ministerio de Educación Pública - Gobierno de Costa Rica" class="footer-logo">
@@ -149,6 +166,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/registroUsuarios.js"></script>
+    <script src="js/verListas.js"></script>
 </body>
 </html>

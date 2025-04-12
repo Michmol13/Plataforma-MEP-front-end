@@ -3,7 +3,7 @@ const inputdescripcionNivel = document.getElementById("txtdescripcionNivel");
 const inputestadoNivel = document.getElementById("txtestadoNivel");
 const btnGuardar = document.querySelector("#btnGuardar");
 
-const inputsRequeridos = document.querySelectorAll('input[required]');
+const inputsRequeridos = document.querySelectorAll('input[required], select[required], textarea[required]');
 
 function mostrarMensajeError(input) {
     const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);

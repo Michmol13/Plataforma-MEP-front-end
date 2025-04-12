@@ -1,6 +1,7 @@
 .input-error {
     border: 2px solid red;
 }
+
 .container {
     max-width: 600px;
 }
@@ -8,14 +9,12 @@
 .card {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.123);
-    margin-bottom: 150px;
+    margin-top: 80px;
 }
 
 .tit-princ{
     margin-top: 73px;
-    margin-bottom: 50px;
 }
-
 
 #btnGuardar {
     background: linear-gradient(90deg, #002B7F 33%, #FFFFFF 33%, #FFFFFF 66%, #CE1126 66%);
@@ -25,6 +24,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 30px;
 }
 
 #btnGuardar:hover {
@@ -35,16 +35,14 @@
 @media (max-width: 480px) {
     .tit-princ {
         margin-top: 20px;
-        margin-bottom: 20px;
         padding: 30px;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
     }
 
-    #btnGuardar {
-        margin-top: 20px;
-        margin-bottom: 10px;
+    .card{
+        padding: 20px;
     }
 
     .form-label{
@@ -63,15 +61,14 @@
 /*TABLETS (481px - 1023px)*/
 @media (min-width: 481px) and (max-width: 1023px) {
     .tit-princ{
-        font-size: 65px;
+        font-size: 60px;
         font-weight: bold;
         margin-top: 80px;
         margin-bottom: 100px;
     }
 
     .card{
-        height: 1050px;
-        margin-bottom: 200px;
+        height: 540px;
     }
 
     .form-label{
@@ -91,43 +88,15 @@
     }
 
     #btnGuardar{
-        font-size: 30px;
-        width: 170px;
+        font-size: 25px;
+        width: 150px;
         height: 80px;
-        margin-top: 35px;
-        margin-bottom: 20px;
+        margin-top: 30px;
     }
 }
 
 /*PANTALLAS GRANDES (1024px - 1902px)*/
 @media (min-width: 1024px) and (max-width: 1902px){
-    .tit-princ{
-        font-size: 50px;
-        font-weight: bold;
-        margin-top: 80px;
-        margin-bottom: 80px;
-    }
-
-    .form-label{
-        font-size: 20px;
-    }
-
-    .form-select{
-        font-size: 20px;
-    }
-
-    option{
-        font-size: 15px;
-    }
-
-    #btnGuardar{
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-}
-
-/*PANTALLAS MUY GRANDES (más de 1902px)*/
-@media (min-width: 1903px){
     .tit-princ{
         font-size: 50px;
         font-weight: bold;
@@ -144,11 +113,57 @@
     }
 
     option{
+        font-size: 15px;
+    }
+
+    #btnGuardar {
+        font-size: 22px;
+        margin-top: 10px ;
+        margin-bottom: 30px;
+    }
+}
+
+/*PANTALLAS MUY GRANDES (más de 1902px)*/
+@media (min-width: 1903px){
+    .tit-princ{
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 80px;
+    }
+
+    #cont-princ{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table {
+        table-layout: fixed;
+        table-layout: auto;
+    }
+
+    td:nth-child(2),
+    th:nth-child(2) {
+    white-space: nowrap;
+    word-break: keep-all;
+    }
+
+    .form-label{
         font-size: 20px;
     }
 
-    #btnGuardar{
-        margin-top: 20px;
-        margin-bottom: 20px;
+    .form-select{
+        font-size: 20px;
     }
+
+    option{
+        font-size: 20px;
+    }
+
+    #btnGuardar {
+        font-size: 20px;
+        margin-top: 10px ;
+        margin-bottom: 30px;
+    }
+
 }

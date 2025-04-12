@@ -7,6 +7,7 @@ const listaMateriales = document.getElementById("txtcategoria")
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required], textarea[required], select[required]');
+
 function mostrarMensajeError(input) {
     const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
     if (spanError) spanError.style.display = "block";

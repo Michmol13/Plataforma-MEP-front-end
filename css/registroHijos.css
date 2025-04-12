@@ -43,7 +43,7 @@
 
     .card{
         padding: 50px;
-        height: 420px;
+        height: 480px;
         margin-bottom: 120px;
     }
 
@@ -60,7 +60,7 @@
     }
 
     #btnGuardar {
-        margin: 30px;
+        margin: 20px;
     }
 }
 
@@ -74,7 +74,7 @@
     }
 
     .card {
-        height: 580px;
+        height: 700px;
         margin-bottom: 190px;
     }
 
@@ -112,7 +112,7 @@
     }
 
     .card {
-        height: 430px;
+        height: 510px;
         margin-bottom: 150px;
     }
 
@@ -145,7 +145,7 @@
     }
 
     .card{
-        height: 420px;
+        height: 490px;
         margin-bottom: 150px;
     }
 

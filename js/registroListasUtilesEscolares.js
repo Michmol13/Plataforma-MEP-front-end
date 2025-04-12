@@ -4,7 +4,7 @@ const inputfechaCreacion = document.getElementById("txtfechaCreacion");
 const inputestadoLista = document.getElementById("txtestadoLista");
 const btnGuardar = document.querySelector("#btnGuardar");
 
-const inputsRequeridos = document.querySelectorAll('input[required]');
+const inputsRequeridos = document.querySelectorAll('input[required], select[required], textarea[required]');
 
 function validar() {
     let error = false;

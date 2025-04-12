@@ -5,7 +5,7 @@ const inputannoLectivo = document.getElementById("txtannoLectivo");
 const listaHijos = document.getElementById("txtniveles-educativos");
 const btnGuardar = document.querySelector("#btnGuardar");
 
-const inputsRequeridos = document.querySelectorAll('input[required]');
+const inputsRequeridos = document.querySelectorAll('input[required], select[required], textarea[required]');
 
 function mostrarMensajeError(input) {
     const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
@@ -36,14 +36,14 @@ function validar() {
         }
     }
 
-    if (inputnivelEducativo.value.trim() === "") {
+    /*if (inputnivelEducativo.value.trim() === "") {
         inputnivelEducativo.classList.add('input-error');
         mostrarMensajeError(inputnivelEducativo);
         error = true;
     } else {
         inputnivelEducativo.classList.remove('input-error');
         ocultarMensajeError(inputnivelEducativo);
-    }
+    }*/
 
     if (inputcedula.value.trim() !== "" && !validarCedula(inputcedula.value)) {
         inputcedula.classList.add('input-error');

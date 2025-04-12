@@ -7,7 +7,7 @@ const inputrol = document.getElementById("txtrol");
 const inputestadoCuenta = document.getElementById("txtestadoCuenta");
 const btnGuardar = document.querySelector("#btnGuardar");
 
-const inputsRequeridos = document.querySelectorAll('input[required]');
+const inputsRequeridos = document.querySelectorAll('input[required], select[required], textarea[required]');
 
 function mostrarMensajeError(input) {
     const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
@@ -81,15 +81,6 @@ function validar() {
             inputsRequeridos[i].classList.remove('input-error');
             ocultarMensajeError(inputsRequeridos[i]);
         }
-    }
-
-    if (inputnivelEducativo.value.trim() === "") {
-        inputnivelEducativo.classList.add('input-error');
-        mostrarMensajeError(inputnivelEducativo);
-        error = true;
-    } else {
-        inputnivelEducativo.classList.remove('input-error');
-        ocultarMensajeError(inputnivelEducativo);
     }
 
     if (inputcedula.value.trim() !== "" && !validarCedula(inputcedula.value)) {
