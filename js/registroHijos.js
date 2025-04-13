@@ -36,15 +36,6 @@ function validar() {
         }
     }
 
-    /*if (inputnivelEducativo.value.trim() === "") {
-        inputnivelEducativo.classList.add('input-error');
-        mostrarMensajeError(inputnivelEducativo);
-        error = true;
-    } else {
-        inputnivelEducativo.classList.remove('input-error');
-        ocultarMensajeError(inputnivelEducativo);
-    }*/
-
     if (inputcedula.value.trim() !== "" && !validarCedula(inputcedula.value)) {
         inputcedula.classList.add('input-error');
         mostrarMensajeError(inputcedula);
