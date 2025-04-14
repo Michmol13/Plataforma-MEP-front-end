@@ -44,7 +44,8 @@
 
     .card{
         padding: 50px;
-        height: 520px;
+        min-height: 520px;
+        height: auto;
         margin-bottom: 120px;
     }
 
@@ -75,8 +76,13 @@
     }
 
     .card {
-        height: 730px;
+        min-height: 730px;
+        height: auto;
         margin-bottom: 190px;
+    }
+
+    span{
+        font-size: 25px;
     }
 
     .form-label {
@@ -113,8 +119,13 @@
     }
 
     .card {
-        height: 530px;
+        min-height: 530px;
+        height: auto;
         margin-bottom: 150px;
+    }
+
+    span{
+        font-size: 18px;
     }
 
     .form-label{
@@ -146,7 +157,8 @@
     }
 
     .card{
-        height: 520px;
+        min-height: 520px;
+        height: auto;
         margin-bottom: 150px;
     }
 

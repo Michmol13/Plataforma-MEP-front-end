@@ -27,7 +27,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 #btnGuardar:hover {
@@ -46,6 +46,7 @@
 
     .card{
         padding: 50px;
+        height: auto;
     }
 
     .form-label{
@@ -59,6 +60,10 @@
     option{
         font-size: 15px;
     }
+
+    #btnGuardar {
+        margin-bottom: 20px;
+    }
 }
 
 /*TABLETS (481px - 1023px)*/
@@ -71,7 +76,12 @@
     }
 
     .card{
-        height: 540px;
+        min-height: 540px;
+        height: auto;
+    }
+
+    span{
+        font-size: 25px;
     }
 
     .form-label{
@@ -95,6 +105,7 @@
         width: 150px;
         height: 80px;
         margin-top: 30px;
+        margin-bottom: 30px;
     }
 }
 
@@ -105,6 +116,15 @@
         font-weight: bold;
         margin-top: 80px;
         margin-bottom: 100px;
+    }
+
+    .card{
+        min-height: 240px;
+        height: auto;
+    }
+
+    span{
+        font-size: 18px;
     }
 
     .form-label{
@@ -121,8 +141,8 @@
 
     #btnGuardar {
         font-size: 22px;
-        margin-top: 10px ;
-        margin-bottom: 30px;
+        margin-top: 15px ;
+        margin-bottom: 10px;
     }
 }
 
@@ -133,6 +153,12 @@
         font-weight: bold;
         margin-top: 80px;
         margin-bottom: 100px;
+    }
+
+    .card{
+        min-height: 240px;
+        height: auto; 
+        margin-bottom: 200px;
     }
 
     .form-label{
@@ -150,6 +176,6 @@
     #btnGuardar {
         font-size: 20px;
         margin-top: 10px ;
-        margin-bottom: 30px;
+        margin-bottom: 5px;
     }
 }
