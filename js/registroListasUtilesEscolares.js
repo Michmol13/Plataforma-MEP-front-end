@@ -1,5 +1,5 @@
 const inputnombreLista = document.getElementById("txtnombreLista");
-const inputnivelEducativo = document.getElementById("txtnivelEducativo");
+const inputnivelEducativo = document.getElementById("txtniveles-educativos");
 const inputfechaCreacion = document.getElementById("txtfechaCreacion");
 const inputestadoLista = document.getElementById("txtestadoLista");
 const listaListas = document.getElementById("txtniveles-educativos");

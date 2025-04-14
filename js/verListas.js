@@ -93,7 +93,7 @@ async function cargarMateriales() {
             fila.innerHTML = `
                 <td>${material.nombreMaterial}</td>
                 <td>${material.descripcion}</td>
-                <td>${material.categoria}</td>
+                <td>${material.categoria?.nombre || 'Sin categoría'}</td>
                 <td>${material.unidadMedida}</td>
                 <td>${material.estado ? 'Activo' : 'Inactivo'}</td>
             `;
@@ -120,9 +120,9 @@ async function cargarListas() {
             const fila = document.createElement('tr');
             fila.innerHTML = `
                 <td>${lista.nombreLista}</td>
-                <td>${lista.nivelEducativo}</td>
+                <td>${lista.nivelEducativo?.nombreNivel || 'Sin categoría'}</td>
                 <td>${lista.fechaCreacion}</td>
-                <td>${lista.estadoLista}</td>
+                <td>${lista.estadoLista ? 'Activo' : 'Inactivo'}</td>
                 <td>${lista.materiales}</td>
             `;
             tabla.appendChild(fila);
@@ -149,7 +149,7 @@ async function cargarHijos() {
             fila.innerHTML = `
                 <td>${hijo.nombrecompletoHijo}</td>
                 <td>${hijo.cedula}</td>
-                <td>${hijo.nivelEducativo}</td>
+                <td>${hijo.nivelEducativo?.nombreNivel || 'Sin categoría'}</td>
                 <td>${hijo.annoLectivo}</td>
             `;
             tabla.appendChild(fila);
