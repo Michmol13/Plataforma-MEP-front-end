@@ -105,6 +105,34 @@ async function cargarMateriales() {
     });
 }
 
+async function cargarListas() {
+    const tabla = document.getElementById('tabla-registroListas').querySelector('tbody');
+    fetch('http://localhost:3000/registroListasUtiles', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        tabla.innerHTML = '';
+        data.forEach(lista => {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${lista.nombreLista}</td>
+                <td>${lista.nivelEducativo}</td>
+                <td>${lista.fechaCreacion}</td>
+                <td>${lista.estadoLista}</td>
+                <td>${lista.materiales}</td>
+            `;
+            tabla.appendChild(fila);
+        });
+    })
+    .catch(error => {
+        console.error('Error al cargar el registro de lista de utiles:', error);
+    });
+}
+
 async function cargarHijos() {
     const tabla = document.getElementById('tabla-registroHijos').querySelector('tbody');
     fetch('http://localhost:3000/registroHijos', {
@@ -137,5 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarNiveles();
     cargarCategorias();
     cargarMateriales();
+    cargarListas();
     cargarHijos();
 });

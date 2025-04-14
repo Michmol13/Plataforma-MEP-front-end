@@ -2,24 +2,44 @@ const inputnombreLista = document.getElementById("txtnombreLista");
 const inputnivelEducativo = document.getElementById("txtnivelEducativo");
 const inputfechaCreacion = document.getElementById("txtfechaCreacion");
 const inputestadoLista = document.getElementById("txtestadoLista");
+const listaListas = document.getElementById("txtniveles-educativos");
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required], select[required], textarea[required]');
 
+function mostrarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "block";
+}
+
+function ocultarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "none";
+}
+
 function validar() {
     let error = false;
-    for (let i = 0; i < inputsRequeridos.length; i++){
-        if (inputsRequeridos[i].value == ""){
-            inputsRequeridos[i].classList.add('error');
+
+    for (let i = 0; i < inputsRequeridos.length; i++) {
+        if (inputsRequeridos[i].value.trim() === "") {
+            inputsRequeridos[i].classList.add('input-error');
+            mostrarMensajeError(inputsRequeridos[i]);
             error = true;
         } else {
-            inputsRequeridos[i].classList.remove('error');
+            inputsRequeridos[i].classList.remove('input-error');
+            ocultarMensajeError(inputsRequeridos[i]);
         }
     }
 
-    if(error == false){
+    if (error) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos obligatorios',
+            text: 'Por favor complete todos los campos resaltados.',
+        });
+    } else {
         registrarLista();
-    } 
+    }
 }
 
 function registrarLista(){
@@ -56,6 +76,31 @@ function registrarLista(){
     
 }
 
+async function mostrarNivelesEducativos(){
+    fetch('http://localhost:3000/registroNivelesEducativos', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        listaListas.innerHTML = ''; 
+        const opcionDefault = document.createElement("option");
+        opcionDefault.value = "";
+        opcionDefault.textContent = "Seleccione una opción";
+        opcionDefault.disabled = true;
+        opcionDefault.selected = true;
+        listaListas.appendChild(opcionDefault);
 
+        data.forEach(nivelEducativo => {
+            const nuevaOpcion = document.createElement("option");
+            nuevaOpcion.value = nivelEducativo._id;
+            nuevaOpcion.textContent = nivelEducativo.nombreNivel;
+            listaListas.appendChild(nuevaOpcion);
+        })
+    });
+}
 
+mostrarNivelesEducativos();
 btnGuardar.addEventListener('click', validar);
