@@ -163,7 +163,7 @@
     <h2 class="title2">Lo que aprendimos</h2>
     <section class="resumen-proyecto">
         <p>
-          Con este proyecto tuvimos una experiencia enriquecedora que nos permitió aplicar nuestros conocimientos en desarrollo web tanto del lado del cliente (frontend) como del servidor (backend). Cada integrante del equipo se encargó de desarrollar uno de los registros del sistema, como por ejemplo: usuarios, niveles educativos, categorías de materiales, listas de útiles, entre otros.
+          Con este proyecto tuvimos una experiencia enriquecedora que nos permitió aplicar nuestros conocimientos en desarrollo web tanto del lado del cliente (frontend) como del servidor (backend). Cada integrante del equipo se encargó de desarrollar uno de los registros del sistema.
         </p>
         <h3>Distribución del trabajo</h3>
         <p>
@@ -198,21 +198,65 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         function buscarRegistro() {
             let searchValue = document.getElementById("searchInput").value.toLowerCase();
-            let rutas = {
+    
+            const rutas = {
+                "registro de usuarios": "registroUsuarios.html",
+                "usuarios": "registroUsuarios.html",
+                "registro de niveles educativos": "registroNivelesEducativos.html",
+                "niveles educativos": "registroNivelesEducativos.html",
+                "registro de categorías de materiales": "registroCategoriasMateriales.html",
+                "categorías": "registroCategoriasMateriales.html",
+                "registro de materales escolares": "registroMaterialesEscolares.html",
+                "materiales": "registroMaterialesEscolares.html",
+                "registro de listas de útiles escolares": "registroListasUtilesEscolares.html",
+                "listas de útiles escolares": "registroListasUtilesEscolares.html",
+                "agregar materiales a lista": "agregarMaterialesLista.html",
+                "agregar materiales": "agregarMaterialesLista.html",
                 "registro de hijos": "registroHijos.html",
-                "registro de usuarios": "registroUsuarios.html"
+                "hijos": "registroHijos.html",
+                "ver listas": "verListas.html",
+                "listas": "verListas.html",
             };
+    
             if (rutas[searchValue]) {
                 window.location.href = rutas[searchValue];
-            } else {
-                alert("No se encontró la sección buscada.");
+                return;
+            }
+    
+            const secciones = document.querySelectorAll("section");
+            let encontrada = false;
+    
+            secciones.forEach((section, index) => {
+                const texto = section.innerText.toLowerCase().trim();
+    
+                if (texto.includes(searchValue)) {
+                    if (!section.id) {
+                        section.id = "seccion-" + index;
+                    }
+    
+                    document.getElementById(section.id).scrollIntoView({ behavior: 'smooth' });
+    
+
+                    section.style.border = "2px solid #070e33";
+                    setTimeout(() => {
+                        section.style.border = "none"
+                    }, 2000);
+    
+                    encontrada = true;
+                    return;
+                }
+            });
+    
+            if (!encontrada) {
+                alert("❌ No se encontró ninguna sección o ruta relacionada con la búsqueda.");
             }
         }
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
