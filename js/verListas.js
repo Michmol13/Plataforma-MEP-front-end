@@ -12,11 +12,11 @@ async function cargarUsuarios() {
         data.forEach(usuario => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
-                <td>${usuario.nombreCompleto}</td>
-                <td>${usuario.cedula}</td>
-                <td>${usuario.correoElectronico}</td>
-                <td>${usuario.rol}</td>
-                <td>${usuario.estadoCuenta ? 'Activo' : 'Inactivo'}</td>
+                <td data-label="Nombre Completo">${usuario.nombreCompleto}</td>
+                <td data-label="Cédula">${usuario.cedula}</td>
+                <td data-label="Correo Electrónico">${usuario.correoElectronico}</td>
+                <td data-label="Rol">${usuario.rol}</td>
+                <td data-label="Estado Cuenta">${usuario.estadoCuenta ? 'Activo' : 'Inactivo'}</td>
             `;
             tabla.appendChild(fila);
         });
@@ -40,9 +40,9 @@ async function cargarNiveles() {
         data.forEach(nivel => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
-                <td>${nivel.nombreNivel}</td>
-                <td>${nivel.descripcion}</td>
-                <td>${nivel.estado ? 'Activo' : 'Inactivo'}</td>
+                <td data-label="Nombre Nivel Educativo">${nivel.nombreNivel}</td>
+                <td data-label="Descripción">${nivel.descripcion}</td>
+                <td data-label="Estado">${nivel.estado ? 'Activo' : 'Inactivo'}</td>
             `;
             tabla.appendChild(fila);
         });
@@ -66,8 +66,8 @@ async function cargarCategorias() {
         data.forEach(categoria => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
-                <td>${categoria.nombre}</td>
-                <td>${categoria.descripcion}</td>
+                <td data-label="Categoría">${categoria.nombre}</td>
+                <td data-label="Descripción">${categoria.descripcion}</td>
             `;
             tabla.appendChild(fila);
         });
@@ -91,11 +91,11 @@ async function cargarMateriales() {
         data.forEach(material => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
-                <td>${material.nombreMaterial}</td>
-                <td>${material.descripcion}</td>
-                <td>${material.categoria?.nombre || 'Sin categoría'}</td>
-                <td>${material.unidadMedida}</td>
-                <td>${material.estado ? 'Activo' : 'Inactivo'}</td>
+                <td data-label="Material">${material.nombreMaterial}</td>
+                <td data-label="Descripción">${material.descripcion}</td>
+                <td data-label="Categoria">${material.categoria?.nombre || 'Sin categoría'}</td>
+                <td data-label="Unidad de Medida">${material.unidadMedida}</td>
+                <td data-label="Estado">${material.estado ? 'Activo' : 'Inactivo'}</td>
             `;
             tabla.appendChild(fila);
         });
@@ -119,11 +119,11 @@ async function cargarListas() {
         data.forEach(lista => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
-                <td>${lista.nombreLista}</td>
-                <td>${lista.nivelEducativo?.nombreNivel || 'Sin categoría'}</td>
-                <td>${lista.fechaCreacion}</td>
-                <td>${lista.estadoLista ? 'Activo' : 'Inactivo'}</td>
-                <td>${lista.materiales}</td>
+                <td data-label="Nombre Lista">${lista.nombreLista}</td>
+                <td data-label="Nivel Educativo">${lista.nivelEducativo?.nombreNivel || 'Sin categoría'}</td>
+                <td data-label="Fecha de creacion">${lista.fechaCreacion}</td>
+                <td data-label="Estado">${lista.estadoLista ? 'Activo' : 'Inactivo'}</td>
+                <td data-label="Materiales">${lista.materiales}</td>
             `;
             tabla.appendChild(fila);
         });
@@ -147,10 +147,10 @@ async function cargarHijos() {
         data.forEach(hijo => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
-                <td>${hijo.nombrecompletoHijo}</td>
-                <td>${hijo.cedula}</td>
-                <td>${hijo.nivelEducativo?.nombreNivel || 'Sin categoría'}</td>
-                <td>${hijo.annoLectivo}</td>
+                <td data-label="Nombre Completo">${hijo.nombrecompletoHijo}</td>
+                <td data-label="Cedula">${hijo.cedula}</td>
+                <td data-label="Nivel Educativo">${hijo.nivelEducativo?.nombreNivel || 'Sin categoría'}</td>
+                <td data-label="Año lectivo">${hijo.annoLectivo}</td>
             `;
             tabla.appendChild(fila);
         });

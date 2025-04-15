@@ -16,154 +16,217 @@
     margin-top: 73px;
 }
 
-#btnGuardar {
-    background: linear-gradient(90deg, #002B7F 33%, #FFFFFF 33%, #FFFFFF 66%, #CE1126 66%);
-    color: rgb(0, 0, 0);
-    border: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 30px;
-}
-
-#btnGuardar:hover {
-    background: linear-gradient(90deg, #002080 33%, #F0F0F0 33%, #F0F0F0 66%, #B5001A 66%);
-}
 
 /*MÓVILES (max-width: 480px)*/
 @media (max-width: 480px) {
+
     .tit-princ {
         margin-top: 20px;
         padding: 30px;
-        font-size: 40px;
+        font-size: 50px;
         font-weight: bold;
         text-align: center;
     }
 
+    #tit-tabla{
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
     .card{
-        padding: 20px;
+        width: 100%;
     }
 
-    .form-label{
-        font-size: 20px;
+    .card table {
+        width: 100%;
+        border: 0;
     }
-
-    .form-select{
-        font-size: 20px;
+    
+    .card thead {
+        display: none;
     }
-
-    option{
-        font-size: 15px;
+    
+    .card tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.75rem;
+        background-color: #ffffff30;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card tbody td {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        font-size: 18px;
+    }
+    
+    .card tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    .card tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-bottom: 4px;
+        color: #444;
+        font-size: 18px;
     }
 }
 
 /*TABLETS (481px - 1023px)*/
 @media (min-width: 481px) and (max-width: 1023px) {
-    .tit-princ{
-        font-size: 60px;
+    .tit-princ {
+        margin-top: 20px;
+        padding: 30px;
+        font-size: 70px;
         font-weight: bold;
-        margin-top: 80px;
-        margin-bottom: 100px;
+        text-align: center;
     }
 
-    .card{
-        height: 540px;
+    #tit-tabla{
+        font-size: 40px;
+        margin-bottom: 25px;
     }
-
-    .form-label{
-        font-size: 30px;
+    
+    .card table {
+        width: 100%;
+        border: 0;
     }
-
-    .form-control{
-        height: 50px;
+    
+    .card thead {
+        display: none;
     }
-
-    .form-select{
-        font-size: 30px;
+    
+    .card tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.75rem;
+        background-color: #ffffff50;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-
-    option{
-        font-size: 15px;
-    }
-
-    #btnGuardar{
+    
+    .card tbody td {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
+        word-wrap: break-word;
         font-size: 25px;
-        width: 150px;
-        height: 80px;
-        margin-top: 30px;
+    }
+    
+    .card tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    .card tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-bottom: 4px;
+        color: #444;
+        font-size: 25px;
     }
 }
 
 /*PANTALLAS GRANDES (1024px - 1902px)*/
 @media (min-width: 1024px) and (max-width: 1902px){
-    .tit-princ{
+    .tit-princ {
         font-size: 50px;
         font-weight: bold;
-        margin-top: 80px;
-        margin-bottom: 100px;
+        margin-top: 60px;
     }
 
-    .form-label{
+    #tit-tabla{
+        margin-bottom: 25px;
+    }
+
+    #cont-princ {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 99vw;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 90vw; 
+        margin-bottom: 2rem;
         font-size: 20px;
     }
 
-    .form-select{
-        font-size: 20px;
+    .card table {
+        width: 100%;
+        max-width: 100%;
+        table-layout: auto;
     }
 
-    option{
-        font-size: 15px;
+    td, th {
+        padding: 1rem;
+        white-space: normal;
+        word-break: break-word;
     }
 
-    #btnGuardar {
-        font-size: 22px;
-        margin-top: 10px ;
-        margin-bottom: 30px;
+    td:nth-child(2),
+    th:nth-child(2) {
+        white-space: nowrap;
+        word-break: keep-all;
     }
 }
 
 /*PANTALLAS MUY GRANDES (más de 1902px)*/
 @media (min-width: 1903px){
-    .tit-princ{
+    .tit-princ {
         font-size: 50px;
         font-weight: bold;
         margin-top: 80px;
     }
 
-    #cont-princ{
+    #tit-tabla{
+        margin-bottom: 25px;
+    }
+
+
+    #cont-princ {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        max-width: 90vw;
     }
 
-    .table {
-        table-layout: fixed;
+    .card {
+        width: 60%;
+        max-width: 85vw;
+        margin-bottom: 2rem;
+        font-size: 18px;
+    }
+
+    .card table {
+        width: 100%;
+        max-width: 100%;
         table-layout: auto;
+    }
+
+    td, th {
+        padding: 1rem;
+        white-space: normal;
+        word-break: break-word;
     }
 
     td:nth-child(2),
     th:nth-child(2) {
-    white-space: nowrap;
-    word-break: keep-all;
-    }
-
-    .form-label{
-        font-size: 20px;
-    }
-
-    .form-select{
-        font-size: 20px;
-    }
-
-    option{
-        font-size: 20px;
-    }
-
-    #btnGuardar {
-        font-size: 20px;
-        margin-top: 10px ;
-        margin-bottom: 30px;
+        white-space: nowrap;
+        word-break: keep-all;
     }
 
 }
