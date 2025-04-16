@@ -1,6 +1,6 @@
 const inputnombrecompletoHijo = document.getElementById("txtnombrecompletoHijo");
 const inputcedula = document.getElementById("txtcedula");
-const inputnivelEducativo = document.getElementById("txtnivelEducativo");
+const inputnivelEducativo = document.getElementById("txtniveles-educativos");
 const inputannoLectivo = document.getElementById("txtannoLectivo");
 const listaHijos = document.getElementById("txtniveles-educativos");
 const btnGuardar = document.querySelector("#btnGuardar");
@@ -115,6 +115,28 @@ async function mostrarNivelesEducativos(){
             listaHijos.appendChild(nuevaOpcion);
         })
     });
+}
+
+function asociarCertificacion(){
+    const datosCertifUsuario = {
+        cedula: listaUsuarios.value,
+        certificacionId : listaCertificaciones.value 
+    }
+    fetch("http://localhost:3000/usuarios/agregar-certificacion",{
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(datosCertifUsuario)
+    }).then(response => {
+        if(!response.ok){
+            alert("No se pudó asociar la certificación");
+        }else{
+            alert("Certificación asociada con éxito");
+        }
+    }).catch(error => {
+        console.log(error);
+    })
 }
 
 mostrarNivelesEducativos();
