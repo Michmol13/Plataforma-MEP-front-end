@@ -102,7 +102,7 @@ async function mostrarListaUtiles(){
     })
     .then(response => response.json())
     .then(data => {
-        listaUtiles.innerHTML = ''; //Instrucción que limpia la tabla antes de cargarla
+        listaUtiles.innerHTML = '';
         const opcionDefault = document.createElement("option");
         opcionDefault.value = "";
         opcionDefault.textContent = "Seleccione una opción";

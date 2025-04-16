@@ -52,10 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             if (input.type === "password") {
                 input.type = "text";
-                icon.classList.replace("fa-eye", "fa-eye-slash"); // Cambia a ojo cerrado
+                icon.classList.replace("fa-eye", "fa-eye-slash");
             } else {
                 input.type = "password";
-                icon.classList.replace("fa-eye-slash", "fa-eye"); // Cambia a ojo abierto
+                icon.classList.replace("fa-eye-slash", "fa-eye");
             }
         });
     }
@@ -113,7 +113,7 @@ function registrarUsuarios() {
         contrasena: inputcontrasena.value,
         confirmarContrasena: inputconfirmarContrasena.value,
         rol: inputrol.value,
-        estadoCuenta: inputestadoCuenta.value === "true" // Asegurar que se convierta en booleano
+        estadoCuenta: inputestadoCuenta.value === "true"
     };
 
     fetch("http://localhost:3000/registroUsuarios", {
@@ -130,7 +130,7 @@ function registrarUsuarios() {
                 text: "El usuario ha sido registrado con éxito"
             });
         } else {
-            return response.json(); // Obtener respuesta de error desde el backend
+            return response.json(); 
         }
     })
     .then(errorResponse => {

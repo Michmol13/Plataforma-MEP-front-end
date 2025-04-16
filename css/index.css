@@ -146,8 +146,8 @@ body {
 
 .recursos {
     display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    gap: 60px; /* Espacio entre los elementos */
+    justify-content: center; 
+    gap: 60px; 
     padding: 20px;
 }
 
@@ -619,7 +619,7 @@ body {
     }
 
     .recurso-item {
-        width: 45%; /* Dos por fila, con espacio entre ellos */
+        width: 45%;
         max-width: 300px;
         text-align: center;
     }
