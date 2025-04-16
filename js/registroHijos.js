@@ -117,27 +117,6 @@ async function mostrarNivelesEducativos(){
     });
 }
 
-function asociarCertificacion(){
-    const datosCertifUsuario = {
-        cedula: listaUsuarios.value,
-        certificacionId : listaCertificaciones.value 
-    }
-    fetch("http://localhost:3000/usuarios/agregar-certificacion",{
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(datosCertifUsuario)
-    }).then(response => {
-        if(!response.ok){
-            alert("No se pudó asociar la certificación");
-        }else{
-            alert("Certificación asociada con éxito");
-        }
-    }).catch(error => {
-        console.log(error);
-    })
-}
 
 mostrarNivelesEducativos();
 btnGuardar.addEventListener('click', validar);

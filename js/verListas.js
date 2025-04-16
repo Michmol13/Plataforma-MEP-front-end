@@ -123,7 +123,14 @@ async function cargarListas() {
                 <td data-label="Nivel Educativo">${lista.nivelEducativo?.nombreNivel || 'Sin categoría'}</td>
                 <td data-label="Fecha de creacion">${lista.fechaCreacion}</td>
                 <td data-label="Estado">${lista.estadoLista ? 'Activo' : 'Inactivo'}</td>
-                <td data-label="Materiales">${lista.materiales}</td>
+                <td data-label="Materiales">
+                    ${lista.materiales.map(m => `
+                        <div>
+                            <strong>${m.material?.nombreMaterial || 'Sin nombre'}</strong> - Cantidad: ${m.cantidad}
+                            ${m.observaciones ? `<br>(${m.observaciones})` : ''}
+                        </div>
+                    `).join('')}
+                </td>
             `;
             tabla.appendChild(fila);
         });

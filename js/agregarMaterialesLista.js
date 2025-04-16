@@ -1,6 +1,97 @@
 const listaUtiles = document.getElementById("sltregistroListasUtiles");
 const listaMateriales = document.getElementById("sltMateriales");
+const Cantidad = document.getElementById("txtcantidad");
+const Observaciones = document.getElementById("txtobservaciones");
+const btnGuardar = document.querySelector("#btnGuardar");
+
+
+const inputsRequeridos = document.querySelectorAll('input[required], select[required], textarea[required]');
 const botonAsociar = document.getElementById("btnAsociar");
+
+function mostrarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "block";
+}
+
+function ocultarMensajeError(input) {
+    const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
+    if (spanError) spanError.style.display = "none";
+}
+
+function validar() {
+    let error = false;
+
+    for (let i = 0; i < inputsRequeridos.length; i++) {
+        if (inputsRequeridos[i].value.trim() === "") {
+            inputsRequeridos[i].classList.add('input-error');
+            mostrarMensajeError(inputsRequeridos[i]);
+            error = true;
+        } else {
+            inputsRequeridos[i].classList.remove('input-error');
+            ocultarMensajeError(inputsRequeridos[i]);
+        }
+    }
+
+    if (error) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos obligatorios',
+            text: 'Por favor complete todos los campos resaltados.',
+        });
+    } else {
+        agregarMaterial();
+    }
+}
+
+function agregarMaterial(){
+    const datosMaterial = { 
+        nombreLista: listaUtiles.value,
+        registroMaterialesEscolaresId: listaMateriales.value,
+        cantidad: Cantidad.value,
+        observaciones: Observaciones.value,
+    };
+
+    fetch("http://localhost:3000/registroListasUtiles/agregar-material", {
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(datosMaterial)
+    })
+    .then(response => {
+        if (response.ok) {
+            Swal.fire({
+                icon: "success",
+                title: "Material registrado",
+                text: "El material ha sido registrado con éxito"
+            });
+        } else {
+            return response.json().then(data => {
+                if (data.msj === "El material ya está agregado en la lista") {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Material duplicado",
+                        text: data.msj
+                    });
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: data.msj || "Ocurrió un error al registrar el material"
+                    });
+                }
+            });
+        }
+    })
+    .catch(error => {
+        console.error(error);
+        Swal.fire({
+            icon: "error",
+            title: "Error de red",
+            text: "No se pudo conectar con el servidor"
+        });
+    });
+}
 
 async function mostrarListaUtiles(){
     fetch('http://localhost:3000/registroListasUtiles', {
@@ -37,7 +128,7 @@ async function mostrarMateriales(){
     })
     .then(response => response.json())
     .then(data => {
-        listaMateriales.innerHTML = ''; //Instrucción que limpia la tabla antes de cargarla
+        listaMateriales.innerHTML = '';
         const opcionDefault = document.createElement("option");
         opcionDefault.value = "";
         opcionDefault.textContent = "Seleccione una opción";
@@ -54,27 +145,7 @@ async function mostrarMateriales(){
     });
 }
 
-/*function asociarMaterial(){
-    const datosCertifUsuario = {
-        cedula: listaUsuarios.value,
-        certificacionId: listaCertificaciones.value
-    }
-    fetch("http://localhost:3000/usuarios/agregar-certificacion", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(datosCertifUsuario)
-    }).then(response => {
-        if(!response.ok){
-            alert("No se pudo asociar la certificacion");
-        }else{
-            alert("certificacion asociada con éxito");
-        }
-    }).catch(error =>{
-        console.log(error);
-    })
-}*/
-
+btnGuardar.addEventListener('click', validar);
 mostrarListaUtiles();
 mostrarMateriales();
+
