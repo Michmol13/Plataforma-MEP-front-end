@@ -308,7 +308,7 @@ body {
     padding: 40px 30px;
     color: #333;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.596);
     font-family: Arial, sans-serif;
     line-height: 1.7;
   }
@@ -439,7 +439,7 @@ body {
 
     .txtprincipal {
         height: 450px;
-        margin-bottom: 60px;
+        margin-bottom: 75px;
     }
 
     .txtprincipal-overlay h1 {
@@ -558,20 +558,9 @@ body {
         margin-left: 8px;
         margin-bottom: 10px;
     }
-    .btn-noticia{
-        display: inline-block;
-        background-color: #d2af6d;
-        color: #0b1d3b; 
-        padding: 10px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: bold;
-        font-family: sans-serif;
-        font-size: 16px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        width: fit-content; 
-        margin-left: 8px;
-        margin-bottom: 30px;
+    
+    #new1{
+        margin-top: 20px;
     }
     
     .btn-noticia:hover {
@@ -584,6 +573,7 @@ body {
         align-items: center;
         padding: 10px;
         margin-top: 60px;
+        margin-bottom: 60px;
     }
 
     .info-mep {
@@ -607,32 +597,64 @@ body {
     }
 
     .btn-mep {
+        display: inline-block;
+        margin-top: 10px;
         padding: 8px 16px;
-        font-size: 14px;
-        background-color: #004080;
+        background-color: #070e33;
         color: white;
         text-decoration: none;
         border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-size: 14px;
+    }
+    
+    .btn-mep:hover {
+        background-color: #041255; 
     }
 
     .resumen-proyecto {
-        padding: 10px 15px;
-        font-size: 16px;
-    }
-
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 30px;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.596);
+        font-family: Arial, sans-serif;
+        line-height: 1.7;
+      }
+      
+    .resumen-proyecto h2 {
+        font-size: 28px;
+        color: #070e33;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      
     .resumen-proyecto h3 {
-        font-size: 18px;
-        margin-top: 15px;
-    }
-
-    .resumen-proyecto ul {
-        padding-left: 20px;
-    }
-
-    .resumen-proyecto li {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+        color: #070e33;
+    
+      }
+      
+    .resumen-proyecto p {
         margin-bottom: 10px;
         font-size: 16px;
-    }
+      }
+      
+    .resumen-proyecto ul {
+        padding-left: 20px;
+        list-style-type: disc;
+      }
+      
+    .resumen-proyecto code {
+        background-color: #eeeeeec0;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        color: #333;
+      }
 
     .footer {
         font-size: 16px;
@@ -709,7 +731,7 @@ body {
 
     .txtprincipal {
         height: 650px;
-        margin-bottom: 150px;
+        margin-bottom: 120px;
     }
 
     .txtprincipal-overlay h1 {
@@ -735,14 +757,15 @@ body {
         font-size: 36px;
         margin-top: 20px;
         text-align: center;
+        margin-bottom: 50px;
     }
 
     .recursos {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 30px;
-        padding: 20px;
+        gap: 50px;
+        margin-bottom: 80px;
     }
 
     .recurso-item {
@@ -763,6 +786,144 @@ body {
         color: #070e33;
         font-weight: bold;
     }
+
+    .title3 {
+        font-size: 36px;
+        margin-top: 20px;
+        text-align: center;
+        margin-bottom: 65px;
+    }
+
+    .card-noticia {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-content: space-evenly;
+        padding: 20px;
+        margin: 15px;
+        text-align: center;
+        margin-bottom: 100px;
+      }
+    
+    .noticia-contenido {
+        max-width: 300px;
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #0033a0b0;
+      }
+    
+    .card-noticia .noticia-contenido:nth-child(3) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 60%;
+      }
+    
+    .card-noticia img {
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+    .btn-noticia {
+        margin-top: 10px;
+        padding: 8px 16px;
+        font-size: 16px;
+      }
+
+    .btn-noticia:hover {
+        background-color: #dfa83c; 
+    }
+
+    .mep {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+        margin-bottom: 100px;
+    }
+    
+    .info-mep {
+        display: flex;
+        flex-direction: column;
+        height: 550px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .img-mep {
+        width: 100%;
+        height: 250px;
+        margin-bottom: 15px;
+    }
+    
+    .text-mep p {
+        font-size: 35px;
+        font-weight: bold;
+    }
+    
+    .title-mep {
+        font-size: 25px;
+        margin: 10px 0;
+    }
+
+    #btn{
+        margin-top: 80px;
+    }
+    
+    .btn-mep {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .btn-mep:hover {
+        background-color: #041255; 
+    }
+
+    .resumen-proyecto {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 30px;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.596);
+        font-family: Arial, sans-serif;
+        line-height: 1.7;
+      }
+      
+    .resumen-proyecto h2 {
+        font-size: 28px;
+        color: #070e33;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      
+    .resumen-proyecto h3 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+        color: #070e33;
+    
+      }
+      
+    .resumen-proyecto p {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      
+    .resumen-proyecto ul {
+        padding-left: 20px;
+        list-style-type: disc;
+      }
+      
+    .resumen-proyecto code {
+        background-color: #eeeeeec0;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        color: #333;
+      }
 
     .footer {
         padding: 20px;
@@ -793,7 +954,7 @@ body {
 
     .txtprincipal {
         height: 550px;
-        margin-bottom: 100px;
+        margin-bottom: 140px;
     }
 
     .txtprincipal-overlay h1 {
@@ -814,6 +975,8 @@ body {
     .search-container button {
         font-size: 22px;
     }
+
+    
 
     .footer {
         font-size: 22px;
