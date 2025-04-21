@@ -86,21 +86,21 @@
         <div class="recurso-item">
             <a href="https://www.mep.go.cr/educatico/calendario-escolar-2025" target="_blank">
                 <img src="img/calendario2025.png" alt="Calendario" class="img1">
-                <p>Calendario escolar 2025</p>  
+                <p id="cal">Calendario escolar 2025</p>  
             </a>
         </div>
 
         <div class="recurso-item">
             <a href="https://www.mep.go.cr/educatico/mochila-digital" target="_blank">
                 <img src="img/mochila.png" alt="Mochila" class="img2">
-                <p>Mochila Digital</p>   
+                <p id="moch">Mochila Digital</p>   
             </a>
         </div>
 
         <div class="recurso-item">
             <a href="https://www.mep.go.cr/educatico/meps-english-hub-high-schools" target="_blank">
                 <img src="img/english.png" alt="English" class="img3">
-                <p>MEP´s English Hub for High Schools</p>   
+                <p id="eng">MEP´s English Hub for High Schools</p>   
             </a>
         </div>
     </section>
@@ -110,7 +110,7 @@
         <div class="noticia-contenido" >
             <img src="img/noticia1.png" alt="Imagen de la noticia">
             <p class="fecha">11 de Abril 2025</p>
-            <h3 class="titulo-noticia">
+            <h3 class="titulo-noticia" id="tit-noticia1">
                 Alajuela vibra con la conmemoración de la Batalla de Rivas y la gesta heroica de Juan Santamaría
             </h3>
             <a href="https://www.mep.go.cr/noticias/alajuela-vibra-conmemoracion-batalla-rivas-gesta-heroica-juan-santamaria" class="btn-noticia"  id="new1" target="_blank">Ir a noticia</a>
@@ -125,10 +125,10 @@
             <a href="https://www.mep.go.cr/noticias/nueva-carrera-cloud-computing-sera-impartida-colegios-tecnicos-costa-rica" class="btn-noticia" id="new2" target="_blank">Ir a noticia</a>
         </div>
 
-        <div class="noticia-contenido">
+        <div class="noticia-contenido" id="card-noticia3">
             <img src="img/noticia3.png" alt="Imagen de la noticia">
             <p class="fecha">10 de Abril 2025</p>
-            <h3 class="titulo-noticia">
+            <h3 class="titulo-noticia" id="tit-noticia3">
                 Cerca de 900 profesionales en Orientación se capacitan para impulsar opciones de formación técnica gratuita del INA
             </h3>
             <a href="https://www.mep.go.cr/noticias/cerca-900-profesionales-orientacion-se-capacitan-impulsar-opciones-formacion-tecnica" class="btn-noticia" id="new3" target="_blank">Ir a noticia</a>
@@ -140,7 +140,7 @@
         <div class="info-mep">
             <img src="img/mep.png" alt="imagen del MEP" class="img-mep">
             <div class="text-mep">
-                <p>Conozca más sobre el MEP</p>
+                <p id="tit-acerca">Conozca más sobre el MEP</p>
                 <h3 class="title-mep">
                     Información relacionada a los Viceministerios, las dependencias que los integran, ingresar a Acerca del MEP.
                 </h3>
@@ -148,10 +148,10 @@
             </div>
         </div>
 
-        <div class="info-mep">
+        <div class="info-mep" id="text-mep2">
             <img src="img/mep.png" alt="imagen del MEP" class="img-mep">
             <div class="text-mep">
-                <p>Dirección de Gestión del Talento Humano</p>
+                <p id="tit-acerca">Dirección de Gestión del Talento Humano</p>
                 <h3 class="title-mep">
                     La DGTH es la instancia encargada de los procesos de promoción, reclutamiento, selección, nombramiento, remuneración, capacitación, evaluación, desvinculación y gestión disciplinaria del personal del Ministerio de Educación Pública.
                 </h3>
@@ -163,28 +163,28 @@
     <h2 class="title2">Lo que aprendimos</h2>
     <section class="resumen-proyecto">
         <p>
-          Con este proyecto tuvimos una experiencia enriquecedora que nos permitió aplicar nuestros conocimientos en desarrollo web tanto del lado del cliente (frontend) como del servidor (backend). Cada integrante del equipo se encargó de desarrollar uno de los registros del sistema.
+            Con este proyecto tuvimos una experiencia enriquecedora que nos permitió aplicar nuestros conocimientos en desarrollo web tanto del lado del cliente (frontend) como del servidor (backend). Cada integrante del equipo se encargó de desarrollar uno de los registros del sistema.
         </p>
         <h3>Distribución del trabajo</h3>
         <p>
-          Cada estudiante eligió uno de los registros y se encargó de su desarrollo de manera completa.
+            Cada estudiante eligió uno de los registros y se encargó de su desarrollo de manera completa.
         </p>
         <ul>
-          <li><strong>Backend:</strong> Modelo con esquema (Mongoose), con rutas POST, GET, PUT y DELETE.</li>
-          <li><strong>Frontend:</strong> Formularios en HTML, estilos con Bootstrap, uso de paleta de colores tricolor (rojo, blanco y azul).</li>
-          <li><strong>JavaScript:</strong> Envío de datos al backend mediante <code>fetch()</code>.</li>
+            <li><strong>Backend:</strong> Modelo con esquema (Mongoose), con rutas POST, GET, PUT y DELETE.</li>
+            <li><strong>Frontend:</strong> Formularios en HTML, estilos con Bootstrap, uso de paleta de colores tricolor (rojo, blanco y azul).</li>
+            <li><strong>JavaScript:</strong> Envío de datos al backend mediante <code>fetch()</code>.</li>
         </ul>
         <h3>Herramientas utilizadas</h3>
         <ul>
-          <li><strong>Visual Studio Code:</strong> Para programar de forma organizada.</li>
-          <li><strong>MongoDB:</strong> Como base de datos para almacenar toda la información.</li>
-          <li><strong>Git y GitHub:</strong> Para el control de versiones. Usamos comandos como <code>commit & push</code>, <code>git fetch</code> y <code>git pull</code> para mantener el proyecto actualizado entre todos los compañeros sin enviar archivos comprimidos.</li>
+            <li><strong>Visual Studio Code:</strong> Para programar de forma organizada.</li>
+            <li><strong>MongoDB:</strong> Como base de datos para almacenar toda la información.</li>
+            <li><strong>Git y GitHub:</strong> Para el control de versiones. Usamos comandos como <code>commit & push</code>, <code>git fetch</code> y <code>git pull</code> para mantener el proyecto actualizado entre todos los compañeros sin enviar archivos comprimidos.</li>
         </ul>
         <h3>Reflexión final</h3>
         <p>
-          Gracias a este proyecto comprendimos la importancia del trabajo en equipo, la organización del código, y el uso de herramientas de desarrollo. Además, aprendimos a conectar el frontend con el backend de forma eficiente y a aplicar buenas prácticas en el diseño de interfaces y experiencia de usuario.
+            Gracias a este proyecto comprendimos la importancia del trabajo en equipo, la organización del código, y el uso de herramientas de desarrollo. Además, aprendimos a conectar el frontend con el backend de forma eficiente y a aplicar buenas prácticas en el diseño de interfaces y experiencia de usuario.
         </p>
-      </section>
+    </section>
 
     <footer class="footer">
         <div class="container text-center">
