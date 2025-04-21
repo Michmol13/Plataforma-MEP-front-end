@@ -79,11 +79,24 @@ function registrarHijo(){
                 text: "Su hijo ha sido registrado con éxito"
             });
         } else {
-            Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "No se pudo registrar a su hijo"
-            });
+            return response.json(); 
+        }
+    })
+    .then(errorResponse => {
+        if (errorResponse) {
+            if (errorResponse.msj === "Ya existe un hijo registrado con esta cédula.") {
+                Swal.fire({
+                    icon: "warning",
+                    title: "Cédula duplicada",
+                    text: "Ya hay un hijo registrado con esta cédula. Verifique e intente de nuevo."
+                });
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: errorResponse.msj || "No se pudo registrar a su hijo"
+                });
+            }
         }
     })
     .catch(error => {
