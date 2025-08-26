@@ -7,6 +7,7 @@ const listaMateriales = document.getElementById("txtcategoria")
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required], textarea[required], select[required]');
+const API_BASE_URL = "https://plataformamep-node.onrender.com";
 
 function mostrarMensajeError(input) {
     const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
@@ -51,7 +52,7 @@ function registrarMaterialesEscolares() {
         estado: inputestado.value,
     };
 
-    fetch("https://plataformamep-node.onrender.com/registroMaterialesEscolares", {
+    fetch(`${API_BASE_URL}/registroMaterialesEscolares`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -79,7 +80,7 @@ function registrarMaterialesEscolares() {
 }
 
 async function mostrarCategoriaMateriales(){
-    fetch("https://plataformamep-node.onrender.com/registroCategoria", {
+    fetch(`${API_BASE_URL}/registroCategoria`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

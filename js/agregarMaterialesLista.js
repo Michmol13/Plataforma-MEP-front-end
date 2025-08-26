@@ -4,7 +4,7 @@ const Cantidad = document.getElementById("txtcantidad");
 const Observaciones = document.getElementById("txtobservaciones");
 const btnGuardar = document.querySelector("#btnGuardar");
 
-
+const API_BASE_URL = "https://plataformamep-node.onrender.com";
 const inputsRequeridos = document.querySelectorAll('input[required], select[required], textarea[required]');
 const botonAsociar = document.getElementById("btnAsociar");
 
@@ -51,7 +51,7 @@ function agregarMaterial(){
         observaciones: Observaciones.value,
     };
 
-    fetch("https://plataformamep-node.onrender.com/registroListasUtiles/agregar-material", {
+    fetch(`${API_BASE_URL}/registroListasUtiles/agregar-material`, {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json"
@@ -94,7 +94,7 @@ function agregarMaterial(){
 }
 
 async function mostrarListaUtiles(){
-    fetch('https://plataformamep-node.onrender.com/registroListasUtiles', {
+    fetch(`${API_BASE_URL}/registroListasUtiles`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ async function mostrarListaUtiles(){
 }
 
 async function mostrarMateriales(){
-    fetch('https://plataformamep-node.onrender.com/registroMaterialesEscolares', {
+    fetch(`${API_BASE_URL}/registroMaterialesEscolares`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

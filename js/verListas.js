@@ -1,6 +1,8 @@
+const API_BASE_URL = "https://plataformamep-node.onrender.com";
+
 async function cargarUsuarios() {
     const tabla = document.getElementById('tabla-registroUsuarios').querySelector('tbody');
-    fetch('https://plataformamep-node.onrender.com/registroUsuarios', {
+    fetch(`${API_BASE_URL}/registroUsuarios`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -28,7 +30,7 @@ async function cargarUsuarios() {
 
 async function cargarNiveles() {
     const tabla = document.getElementById('tabla-registroNivelesEducativos').querySelector('tbody');
-    fetch('https://plataformamep-node.onrender.com/registroNivelesEducativos', {
+    fetch(`${API_BASE_URL}/registroNivelesEducativos`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -54,7 +56,7 @@ async function cargarNiveles() {
 
 async function cargarCategorias() {
     const tabla = document.getElementById('tabla-registroCategoria').querySelector('tbody');
-    fetch('https://plataformamep-node.onrender.com/registroCategoria', {
+    fetch(`${API_BASE_URL}/registroCategoria`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -79,7 +81,7 @@ async function cargarCategorias() {
 
 async function cargarMateriales() {
     const tabla = document.getElementById('tabla-registroMaterialesEscolares').querySelector('tbody');
-    fetch('https://plataformamep-node.onrender.com/registroMaterialesEscolares', {
+    fetch(`${API_BASE_URL}/registroMaterialesEscolares`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -107,7 +109,7 @@ async function cargarMateriales() {
 
 async function cargarListas() {
     const tabla = document.getElementById('tabla-registroListas').querySelector('tbody');
-    fetch('https://plataformamep-node.onrender.com/registroListasUtiles', {
+    fetch(`${API_BASE_URL}/registroListasUtiles`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -142,7 +144,7 @@ async function cargarListas() {
 
 async function cargarHijos() {
     const tabla = document.getElementById('tabla-registroHijos').querySelector('tbody');
-    fetch('https://plataformamep-node.onrender.com/registroHijos', {
+    fetch(`${API_BASE_URL}/registroHijos`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

@@ -3,6 +3,7 @@ const inputdescripcion = document.getElementById("txtdescripcion");
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required]');
+const API_BASE_URL = "https://plataformamep-node.onrender.com";
 
 function mostrarMensajeError(input) {
     const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
@@ -43,7 +44,7 @@ function registrarCategoria(){
         nombre: inputnombre.value,
         descripcion: inputdescripcion.value,
     };
-    fetch("https://plataformamep-node.onrender.com/registroCategoria", {
+    fetch(`${API_BASE_URL}/registroCategoria`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"

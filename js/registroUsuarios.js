@@ -8,6 +8,7 @@ const inputestadoCuenta = document.getElementById("txtestadoCuenta");
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required], select[required], textarea[required]');
+const API_BASE_URL = "https://plataformamep-node.onrender.com";
 
 function mostrarMensajeError(input) {
     const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
@@ -105,7 +106,7 @@ const datosUsuario = {
     estadoCuenta: estadoCuentaBoolean
 };
 
-fetch("https://plataformamep-node.onrender.com/registroUsuarios", {
+fetch(`${API_BASE_URL}/registroUsuarios`, {
     method: 'POST',
     headers: {
         "Content-Type": "application/json"

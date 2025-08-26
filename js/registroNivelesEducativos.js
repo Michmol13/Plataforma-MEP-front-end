@@ -4,6 +4,7 @@ const inputestadoNivel = document.getElementById("txtestadoNivel");
 const btnGuardar = document.querySelector("#btnGuardar");
 
 const inputsRequeridos = document.querySelectorAll('input[required], select[required], textarea[required]');
+const API_BASE_URL = "https://plataformamep-node.onrender.com";
 
 function mostrarMensajeError(input) {
     const spanError = document.getElementById(`error-${input.id.replace("txt", "")}`);
@@ -46,7 +47,7 @@ function registrarNivelEducativo() {
         estado: inputestadoNivel.value,
     };
 
-    fetch("https://plataformamep-node.onrender.com/registroNivelesEducativos", {
+    fetch(`${API_BASE_URL}/registroNivelesEducativos`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
