@@ -46,7 +46,7 @@ function registrarNivelEducativo() {
         estado: inputestadoNivel.value,
     };
 
-    fetch("http://localhost:3000/registroNivelesEducativos", {
+    fetch("https://plataformamep-node.onrender.com/registroNivelesEducativos", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"

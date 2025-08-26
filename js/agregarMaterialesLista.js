@@ -51,7 +51,7 @@ function agregarMaterial(){
         observaciones: Observaciones.value,
     };
 
-    fetch("http://localhost:3000/registroListasUtiles/agregar-material", {
+    fetch("https://plataformamep-node.onrender.com/registroListasUtiles/agregar-material", {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json"
@@ -94,7 +94,7 @@ function agregarMaterial(){
 }
 
 async function mostrarListaUtiles(){
-    fetch('http://localhost:3000/registroListasUtiles', {
+    fetch('https://plataformamep-node.onrender.com/registroListasUtiles', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ async function mostrarListaUtiles(){
 }
 
 async function mostrarMateriales(){
-    fetch('http://localhost:3000/registroMaterialesEscolares', {
+    fetch('https://plataformamep-node.onrender.com/registroMaterialesEscolares', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

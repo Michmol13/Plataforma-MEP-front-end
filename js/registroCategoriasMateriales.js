@@ -43,7 +43,7 @@ function registrarCategoria(){
         nombre: inputnombre.value,
         descripcion: inputdescripcion.value,
     };
-    fetch("http://localhost:3000/registroCategoria", {
+    fetch("https://plataformamep-node.onrender.com/registroCategoria", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"

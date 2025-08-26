@@ -49,7 +49,7 @@ function registrarLista(){
         fechaCreacion: inputfechaCreacion.value,
         estadoLista: inputestadoLista.value,
     };
-    fetch("http://localhost:3000/registroListasUtiles", {
+    fetch("https://plataformamep-node.onrender.com/registroListasUtiles", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -77,7 +77,7 @@ function registrarLista(){
 }
 
 async function mostrarNivelesEducativos(){
-    fetch('http://localhost:3000/registroNivelesEducativos', {
+    fetch('https://plataformamep-node.onrender.com/registroNivelesEducativos', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

@@ -51,7 +51,7 @@ function registrarMaterialesEscolares() {
         estado: inputestado.value,
     };
 
-    fetch("http://localhost:3000/registroMaterialesEscolares", {
+    fetch("https://plataformamep-node.onrender.com/registroMaterialesEscolares", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -79,7 +79,7 @@ function registrarMaterialesEscolares() {
 }
 
 async function mostrarCategoriaMateriales(){
-    fetch("http://localhost:3000/registroCategoria", {
+    fetch("https://plataformamep-node.onrender.com/registroCategoria", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

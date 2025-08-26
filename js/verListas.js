@@ -1,6 +1,6 @@
 async function cargarUsuarios() {
     const tabla = document.getElementById('tabla-registroUsuarios').querySelector('tbody');
-    fetch('http://localhost:3000/registroUsuarios', {
+    fetch('https://plataformamep-node.onrender.com/registroUsuarios', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ async function cargarUsuarios() {
 
 async function cargarNiveles() {
     const tabla = document.getElementById('tabla-registroNivelesEducativos').querySelector('tbody');
-    fetch('http://localhost:3000/registroNivelesEducativos', {
+    fetch('https://plataformamep-node.onrender.com/registroNivelesEducativos', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ async function cargarNiveles() {
 
 async function cargarCategorias() {
     const tabla = document.getElementById('tabla-registroCategoria').querySelector('tbody');
-    fetch('http://localhost:3000/registroCategoria', {
+    fetch('https://plataformamep-node.onrender.com/registroCategoria', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -79,7 +79,7 @@ async function cargarCategorias() {
 
 async function cargarMateriales() {
     const tabla = document.getElementById('tabla-registroMaterialesEscolares').querySelector('tbody');
-    fetch('http://localhost:3000/registroMaterialesEscolares', {
+    fetch('https://plataformamep-node.onrender.com/registroMaterialesEscolares', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -107,7 +107,7 @@ async function cargarMateriales() {
 
 async function cargarListas() {
     const tabla = document.getElementById('tabla-registroListas').querySelector('tbody');
-    fetch('http://localhost:3000/registroListasUtiles', {
+    fetch('https://plataformamep-node.onrender.com/registroListasUtiles', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -142,7 +142,7 @@ async function cargarListas() {
 
 async function cargarHijos() {
     const tabla = document.getElementById('tabla-registroHijos').querySelector('tbody');
-    fetch('http://localhost:3000/registroHijos', {
+    fetch('https://plataformamep-node.onrender.com/registroHijos', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

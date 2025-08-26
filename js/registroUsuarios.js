@@ -105,7 +105,7 @@ const datosUsuario = {
     estadoCuenta: estadoCuentaBoolean
 };
 
-fetch("http://localhost:3000/registroUsuarios", {
+fetch("https://plataformamep-node.onrender.com/registroUsuarios", {
     method: 'POST',
     headers: {
         "Content-Type": "application/json"

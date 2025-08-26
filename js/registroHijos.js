@@ -65,7 +65,7 @@ function registrarHijo(){
         nivelEducativo: inputnivelEducativo.value,
         annoLectivo: inputannoLectivo.value,
     };
-    fetch("http://localhost:3000/registroHijos", {
+    fetch("https://plataformamep-node.onrender.com/registroHijos", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -105,7 +105,7 @@ function registrarHijo(){
 }
 
 async function mostrarNivelesEducativos(){
-    fetch('http://localhost:3000/registroNivelesEducativos', {
+    fetch('https://plataformamep-node.onrender.com/registroNivelesEducativos', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
